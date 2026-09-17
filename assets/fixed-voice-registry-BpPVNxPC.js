@@ -1,0 +1,1 @@
+import{aC as o}from"./assessment-ByzqurOv.js";const n=globalThis.__SILVERMIND_FIXED_VOICE_REGISTRY__||{};function s(r,t,i){const e=n[`${r}:${t}`];return!e||e.text!==i||!e.cdnUrl||!e.audioHash?null:{...e,audioUrl:o(e.cdnUrl)}}export{s as g};
