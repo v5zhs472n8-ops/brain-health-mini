@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>数字寻踪 · 手机竖屏试玩 v0.1 候选</title>
+<link rel="icon" href="data:,">
+  <script type="module" crossorigin src="../../assets/numberTrace-DDAUG3uI.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="../../assets/numberTrace-Bb9G5QPt.css">
+  <link rel="stylesheet" crossorigin href="../../assets/mobile-FVvosGoj.css">
+</head>
+<body>
+<div id="app" data-screen="start">
+  <!-- 开始页 -->
+  <section id="screen-start" class="screen">
+    <div class="card start-card">
+      <h1>数字寻踪</h1>
+      <p class="lead">记住这些数字在哪里，藏起来后，从 1 开始按顺序把它们找出来。</p>
+      <button id="btn-start" class="btn btn-big" type="button">开始训练</button>
+    </div>
+  </section>
+
+  <!-- 游戏页（含倒计时） -->
+  <section id="screen-game" class="screen" hidden>
+    <header class="topbar">
+      <button id="btn-pause" class="btn-pause" type="button" aria-label="暂停">暂停</button>
+      <div class="status" aria-live="off">
+        <span id="st-time" class="st">02:00</span>
+        <span id="st-level" class="st">基础</span>
+        <span id="st-score" class="st">0分</span>
+      </div>
+    </header>
+    <main class="play">
+      <div class="heading">
+        <h2 id="headline"></h2>
+        <p id="instruction"></p>
+      </div>
+      <div id="board-area" class="board-area">
+        <div id="board" class="board"></div>
+      </div>
+      <div class="actions">
+        <button id="primary" class="btn btn-action" type="button"></button>
+        <button id="help" class="btn btn-action btn-ghost" type="button" hidden>再看一眼</button>
+      </div>
+      <p id="message" class="message" aria-live="polite"></p>
+    </main>
+    <div id="countdown" class="layer" hidden><div class="count-num" id="count-num">3</div></div>
+    <div id="feedback" class="layer layer-clear" hidden><div class="badge" id="feedback-badge"></div></div>
+    <div id="pause-layer" class="layer" role="dialog" aria-modal="true" aria-label="已暂停" hidden>
+      <div class="card dialog">
+        <h2>已暂停</h2>
+        <button id="btn-resume" class="btn btn-big" type="button">继续</button>
+        <button id="btn-restart" class="btn btn-big btn-ghost" type="button">重新开始</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 结算页 -->
+  <section id="screen-result" class="screen" hidden>
+    <div class="card result-card">
+      <h1>本次训练完成</h1>
+      <div class="total"><span id="rs-score">0</span><small>分</small></div>
+      <dl class="stats">
+        <div><dt>完成盘数</dt><dd id="rs-completed">0</dd></div>
+        <div><dt>失误数</dt><dd id="rs-errors">0</dd></div>
+        <div><dt>到达等级</dt><dd id="rs-level">基础</dd></div>
+      </dl>
+      <button id="btn-again" class="btn btn-big" type="button">继续训练</button>
+    </div>
+  </section>
+</div>
+</body>
+</html>

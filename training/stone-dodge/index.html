@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>巧手避石 · 手机竖屏试玩</title>
+<link rel="icon" href="data:,">
+  <script type="module" crossorigin src="../../assets/stoneDodge-Da5DpXlx.js"></script>
+  <link rel="modulepreload" crossorigin href="../../assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="stylesheet" crossorigin href="../../assets/stoneDodge-CKUfBuDg.css">
+  <link rel="stylesheet" crossorigin href="../../assets/mobile-FVvosGoj.css">
+</head>
+<body>
+<main class="app" id="app" aria-label="巧手避石游戏">
+  <header class="topbar">
+    <button id="pause" class="pause-button" disabled>暂停</button>
+    <div class="metrics" aria-live="off">
+      <span class="metric"><strong id="time">02:00</strong></span>
+      <span class="divider" aria-hidden="true">｜</span>
+      <span class="metric"><strong id="level">基础</strong></span>
+      <span class="divider" aria-hidden="true">｜</span>
+      <span class="metric">得分 <strong id="score">0</strong></span>
+    </div>
+  </header>
+  <section class="stage" id="stage">
+    <canvas id="canvas" width="560" height="728" aria-label="左右两颗圆石在各自道路的内道与外道之间移动，躲开下落的碎石"></canvas>
+    <div class="feedback" id="feedback" aria-live="polite"></div>
+  </section>
+  <div class="holds" id="holds">
+    <button id="left-control" class="hold" aria-keyshortcuts="ArrowLeft" aria-label="按住此按钮，左球外移；松开回内道"><span class="hold-small">按住左侧</span><span class="hold-main">左球外移</span><span class="hold-small">松开回内道</span></button>
+    <button id="right-control" class="hold" aria-keyshortcuts="ArrowRight" aria-label="按住此按钮，右球外移；松开回内道"><span class="hold-small">按住右侧</span><span class="hold-main">右球外移</span><span class="hold-small">松开回内道</span></button>
+  </div>
+  <div class="overlay" id="overlay">
+    <div class="card" id="card" role="dialog" aria-modal="false" aria-labelledby="dialog-title">
+      <h1 id="dialog-title">巧手避石</h1>
+      <p id="dialog-text">正在准备画面…</p>
+      <div id="dialog-extra"></div>
+      <button class="primary" id="primary-action" disabled>准备中</button>
+      <button class="secondary" id="secondary-action" hidden>重新开始</button>
+    </div>
+  </div>
+</main>
+</body>
+</html>
