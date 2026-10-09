@@ -1,0 +1,163 @@
+/* 头部第四版：结果摘要和一项可执行的训练规则。 */
+.header-v4 { padding:3.6rem 4.4rem; }
+.header-v4-result { display:grid; grid-template-columns:31rem 1fr; gap:4rem; align-items:center; }
+.header-v4 .assessment-report-score-ring { margin:0 auto; }
+.header-v4-summary { min-width:0; }
+.header-v4-title-row { display:flex; justify-content:space-between; align-items:flex-start; gap:2rem; }
+.header-v4-title-row > div > span { display:block; color:#687991; font-size:1.6rem; margin-bottom:0.5rem; }
+.header-v4-title-row h2 { color:#1F2D45; font-size:3.6rem; line-height:1.45; margin:0; }
+.header-v4-audio { color:#718199; font-size:1.5rem; white-space:nowrap; padding-top:0.8rem; }
+.header-v5-summary { color:#40526B; font-size:2rem; line-height:1.8; margin:2rem 0 0; }
+.header-v5-conclusion { display:flex; align-items:center; gap:1.4rem; margin-top:2rem; padding:1.5rem 1.8rem; background:#F4F8F6; border-left:0.4rem solid #18A77C; }
+.header-v5-conclusion span { color:#687991; font-size:1.5rem; white-space:nowrap; }
+.header-v5-conclusion strong { color:#263750; font-size:2.1rem; line-height:1.5; }
+.header-v4 .assessment-report-score-legend { margin-top:2.4rem; }
+.header-v4-plan { margin-top:2.6rem; border:0.1rem solid #DDE7E3; border-radius:2rem; padding:2.4rem 2.8rem; }
+.header-v4-plan-heading { display:flex; align-items:end; justify-content:space-between; gap:2rem; }
+.header-v4-plan-heading span { display:block; color:#16826B; font-size:1.5rem; }
+.header-v4-plan-heading h3 { color:#263750; font-size:2.5rem; margin:0.4rem 0 0; }
+.header-v4-plan-heading > p { color:#52647C; font-size:1.6rem; line-height:1.6; margin:0; text-align:right; }
+.header-v5-week-plan { display:grid; grid-template-columns:1fr 1fr 1.25fr; gap:1.6rem; margin-top:2rem; }
+.header-v5-week-plan > article,.header-v5-week-plan > section { background:#F7FAF9; border-radius:1.2rem; padding:1.8rem; }
+.header-v5-week-plan > article.is-primary { background:#F0F8F5; box-shadow:inset 0 0 0 0.15rem #CDE6DD; }
+.header-v5-week-plan span { display:block; color:#16826B; font-size:1.4rem; }
+.header-v5-week-plan h4 { color:#263750; font-size:2.2rem; margin:0.4rem 0; }
+.header-v5-week-plan article strong { display:block; color:#263750; font-size:1.75rem; margin:0.6rem 0; }
+.header-v5-week-plan p { color:#52647C; font-size:1.5rem; line-height:1.65; margin:0; }
+.header-v5-week-plan section span:nth-of-type(2) { margin-top:1.2rem; }
+.header-v5-week-plan section strong { color:#263750; }
+.header-v4-note { color:#718199; font-size:1.4rem; line-height:1.65; margin:1.5rem 0 0; }
+@media(max-width:800px){.header-v4-result{grid-template-columns:23rem 1fr;gap:2.4rem}.header-v5-week-plan{grid-template-columns:1fr}.header-v4-plan-heading{align-items:flex-start;flex-direction:column}.header-v4-plan-heading>p{text-align:left}}
+@media(max-width:560px){.header-v4{padding:2.4rem}.header-v4-result{grid-template-columns:1fr}.header-v4-title-row h2{font-size:3rem}.header-v5-conclusion{align-items:flex-start;flex-direction:column}}
+
+/* 头部第六版：头部只回答结果、练习方向和下一步。 */
+.header-v6 { display:grid; grid-template-columns:30rem minmax(0,1fr); gap:4.6rem; align-items:center; padding:4.2rem 4.8rem; }
+.header-v6-score-column { min-width:0; }
+.header-v6 .assessment-report-score-ring { margin:0 auto; }
+.header-v6-range { display:grid; grid-template-columns:repeat(3,1fr); gap:0.5rem; margin-top:2rem; }
+.header-v6-range-item { position:relative; display:flex; flex-direction:column; align-items:center; gap:0.4rem; color:#7A899D; font-style:normal; font-size:1.35rem; }
+.header-v6-range-item i { display:block; width:100%; height:0.8rem; border-radius:999px; background:#E4F1ED; }
+.header-v6-range-item:nth-child(2) i { background:#21A77E; }
+.header-v6-range-item:nth-child(3) i { background:#F2D999; }
+.header-v6-range-item b { font-weight:500; }
+.header-v6-range-item em { position:absolute; top:-2.7rem; padding:0.25rem 0.7rem; border-radius:999px; background:#138D6B; color:#fff; font-size:1.15rem; font-style:normal; white-space:nowrap; }
+.header-v6-range-item em::after { content:""; position:absolute; left:50%; bottom:-0.4rem; width:0.8rem; height:0.8rem; background:#138D6B; transform:translateX(-50%) rotate(45deg); }
+.header-v6-content { min-width:0; }
+.header-v6-title-row { display:flex; align-items:flex-start; justify-content:space-between; gap:2rem; }
+.header-v6-title-row > div > span { display:block; color:#718199; font-size:1.55rem; margin-bottom:0.5rem; }
+.header-v6-title-row h2 { color:#1F2D45; font-size:3.5rem; line-height:1.4; margin:0; }
+.header-v6-audio { color:#718199; font-size:1.45rem; white-space:nowrap; padding-top:0.8rem; }
+.header-v6-result-text { color:#40526B; font-size:1.85rem; line-height:1.75; margin:1.5rem 0 0; }
+.header-v6-action { margin-top:2.1rem; padding:1.8rem 2rem; border:0.1rem solid #DCE8E4; border-radius:1.5rem; background:#F8FBFA; }
+.header-v6-action-label { display:block; color:#16826B; font-size:1.45rem; margin-bottom:1rem; }
+.header-v6-action-row { display:grid; grid-template-columns:7.2rem 8.8rem minmax(0,1fr); gap:1.2rem; align-items:baseline; padding:0.9rem 0; }
+.header-v6-action-row + .header-v6-action-row { border-top:0.1rem solid #E1EAE7; }
+.header-v6-action-row > span { color:#687991; font-size:1.45rem; }
+.header-v6-action-row strong { color:#263750; font-size:1.9rem; white-space:nowrap; }
+.header-v6-action-row.is-primary strong { color:#0D8564; }
+.header-v6-action-row p { color:#52647C; font-size:1.55rem; line-height:1.6; margin:0; }
+.header-v6-next { color:#596B82; font-size:1.5rem; line-height:1.6; margin:1.7rem 0 0; }
+.header-v6-next strong { color:#354A62; }
+@media(max-width:800px){.header-v6{grid-template-columns:23rem minmax(0,1fr);gap:2.8rem;padding:3.2rem}.header-v6-action-row{grid-template-columns:7rem 8rem minmax(0,1fr)}}
+@media(max-width:620px){.header-v6{grid-template-columns:1fr;padding:2.4rem}.header-v6-score-column{max-width:28rem;margin:0 auto;width:100%}.header-v6-title-row h2{font-size:3rem}.header-v6-action-row{grid-template-columns:1fr 1.5fr}.header-v6-action-row p{grid-column:1/-1}.header-v6-audio{display:none}}
+
+/* 能力总览第二版：用线性比较替代双图表争夺注意力。 */
+.wm-report-card { margin-top:2rem; padding:3.2rem 4rem; border-radius:2.4rem; background:#fff; color:#33465F; box-shadow:0 .5rem 0 #BDD0DA; }
+.wm-report-heading { display:flex; align-items:center; justify-content:space-between; padding-bottom:2rem; border-bottom:1px solid #E3E9EC; }
+.wm-report-heading h3 { margin:0; font-size:3rem; font-weight:700; color:#203149; }
+.wm-report-heading > div { display:flex; gap:.5rem; align-items:baseline; }
+.wm-report-heading strong { font-size:3.2rem; color:#203149; }
+.wm-report-heading span { font-size:1.6rem; }
+.wm-report-heading b { margin-left:1rem; padding:.4rem 1.2rem; border-radius:999px; background:#EAF6F1; color:#16826B; font-size:1.6rem; font-weight:500; }
+.wm-report-card h4 { margin:0 0 .8rem; color:#203149; font-size:2rem; font-weight:700; }
+.wm-report-card p { margin:0; font-size:1.8rem; line-height:1.85; }
+.wm-report-card p strong { font-weight:600; color:#203149; }
+.wm-report-definition,.wm-report-result,.wm-report-life { margin-top:2.4rem; }
+.wm-report-result > p + p { margin-top:1rem; }
+.wm-report-result .wm-report-conclusion { margin-top:1.4rem; padding-left:1.2rem; border-left:.3rem solid #18A77C; }
+.wm-report-result .wm-report-context { font-size:1.45rem; color:#718199; margin-top:.7rem; }
+.wm-report-game { display:flex; gap:3rem; align-items:center; padding:2.2rem 2.4rem; margin-top:2.4rem; border-radius:1.6rem; background:#F1F8F5; }
+.wm-report-game > div { flex:1; min-width:0; }
+.wm-report-game > div > span { display:block; font-size:1.45rem; color:#16826B; margin-bottom:.5rem; }
+.wm-report-game h4 { font-size:2.4rem; }
+.wm-report-game button { flex:none; padding:1.3rem 1.8rem; border-radius:1rem; color:white; background:#128868; font-size:1.8rem; font-weight:600; min-height:4.8rem; }
+.wm-report-game button span { padding-left:1rem; }
+.wm-report-game button:focus-visible { outline:3px solid #203149; outline-offset:3px; }
+@media(max-width:760px){.wm-report-card{padding:2.4rem}.wm-report-game{flex-direction:column;align-items:stretch;gap:1.5rem}.wm-report-game button{align-self:flex-start}}
+.ability-v2-eyebrow { color:#16826B; font-size:1.45rem; margin:0 0 0.35rem; }
+.ability-v2-intro { color:#586B82; font-size:1.6rem; line-height:1.7; margin:1.4rem 0 2.2rem; }
+.ability-v2 .assessment-report-ability-radar-column { display:none; }
+.ability-v2 .assessment-report-ability-overview { display:block; }
+.ability-v2 .assessment-report-ability-comparison { width:100%; }
+.ability-v2 .assessment-report-ability-comparison-card { padding:1.7rem 2rem; border:0.1rem solid #E1E9E6; border-radius:1.3rem; background:#fff; }
+.ability-v2 .assessment-report-ability-comparison-card + .assessment-report-ability-comparison-card { margin-top:1.2rem; }
+.ability-v2 .assessment-report-ability-comparison-card.is-priority { border-color:#9ED6C4; background:#F5FBF8; box-shadow:inset 0.4rem 0 #18A77C; }
+.ability-v2 .assessment-report-ability-comparison-heading { display:grid; grid-template-columns:15rem 1fr auto; align-items:center; gap:1.5rem; }
+.ability-v2 .assessment-report-ability-comparison-heading > strong { font-size:2rem; }
+.ability-v2 .assessment-report-ability-status { width:auto; justify-self:start; }
+.ability-v2 .assessment-report-ability-score { justify-self:end; }
+.ability-v2 .assessment-report-ability-bars { margin:1.2rem 0 0.8rem; }
+.ability-v2 .assessment-report-ability-comparison-meta { display:flex; justify-content:space-between; gap:2rem; color:#718199; }
+.ability-v2 .assessment-report-ability-comparison-meta strong { color:#51647B; font-size:1.45rem; font-weight:400; }
+
+/* 分项解读第二版。 */
+.report-detail-v2-intro { display:flex; align-items:end; justify-content:space-between; gap:4rem; padding:2.2rem 0 0.2rem; color:#fff; }
+.report-detail-v2-intro span { display:block; color:#AFC8C0; font-size:1.45rem; }
+.report-detail-v2-intro h2 { font-size:2.8rem; margin:0.3rem 0 0; }
+.report-detail-v2-intro p { max-width:48rem; color:#CAD7D3; font-size:1.45rem; line-height:1.65; margin:0; text-align:right; }
+.report-detail-v2-card { margin-top:2rem; padding:2.8rem 3.2rem; border-radius:2rem; background:#fff; box-shadow:0 0.55rem 0 #BDD0DA; }
+.report-detail-v2-card.is-priority { box-shadow:inset 0.5rem 0 var(--detail-color),0 0.55rem 0 #BDD0DA; }
+.report-detail-v2-header { display:flex; justify-content:space-between; align-items:center; gap:2rem; padding-bottom:1.8rem; border-bottom:0.1rem solid #E3EAE8; }
+.report-detail-v2-header > div:first-child > span { display:block; color:#16826B; font-size:1.4rem; margin-bottom:0.25rem; }
+.report-detail-v2-header h3 { color:#203149; font-size:2.8rem; margin:0; }
+.report-detail-v2-score { display:flex; align-items:baseline; gap:0.4rem; }
+.report-detail-v2-score strong { color:#203149; font-size:3rem; }
+.report-detail-v2-score small { color:#607188; font-size:1.45rem; }
+.report-detail-v2-score em { margin-left:0.8rem; padding:0.4rem 1rem; border-radius:999px; background:#EAF6F1; color:#16826B; font-size:1.35rem; font-style:normal; }
+.report-detail-v2-result { padding:1.8rem 0; }
+.report-detail-v2-card h4 { color:#263750; font-size:1.85rem; margin:0; }
+.report-detail-v2-result p { color:#50637A; font-size:1.6rem; line-height:1.75; margin:0.65rem 0 0; }
+.report-detail-v2-grid { display:grid; grid-template-columns:1.12fr 0.88fr; gap:1.6rem; }
+.report-detail-v2-grid > section { padding:1.8rem 2rem; border-radius:1.3rem; background:#F7FAF9; }
+.report-detail-v2-grid ul { display:grid; gap:0.7rem; list-style:none; margin:1rem 0 0; padding:0; }
+.report-detail-v2-grid li { position:relative; padding-left:1.7rem; color:#50637A; font-size:1.5rem; line-height:1.55; }
+.report-detail-v2-grid li::before { content:""; position:absolute; left:0; top:0.65em; width:0.6rem; height:0.6rem; border-radius:50%; background:#18A77C; }
+.report-detail-v2-grid p { color:#445970; font-size:1.55rem; line-height:1.65; margin:1rem 0 0.75rem; }
+.report-detail-v2-grid section > span { color:#718199; font-size:1.35rem; line-height:1.55; }
+.report-detail-v2-practice { display:grid; grid-template-columns:1fr 1.15fr; gap:2rem; margin-top:1.6rem; padding:1.8rem 2rem; border:0.1rem solid #D9E7E2; border-radius:1.3rem; }
+.report-detail-v2-practice > div > span { display:block; color:#16826B; font-size:1.4rem; margin-bottom:0.5rem; }
+.report-detail-v2-practice dl { margin:0; }
+.report-detail-v2-practice dl > div { display:grid; grid-template-columns:11rem 1fr; gap:1rem; }
+.report-detail-v2-practice dl > div + div { margin-top:0.8rem; padding-top:0.8rem; border-top:0.1rem solid #E4EAE8; }
+.report-detail-v2-practice dt { color:#66788E; font-size:1.4rem; }
+.report-detail-v2-practice dd { color:#354A62; font-size:1.45rem; line-height:1.55; margin:0; }
+.report-detail-v2-footer { display:flex; align-items:center; justify-content:space-between; gap:2rem; margin:2rem 0 0; padding:2rem 2.4rem; border-radius:1.5rem; background:#F5F8F7; }
+.report-detail-v2-footer p { color:#53667D; font-size:1.45rem; line-height:1.6; margin:0; }
+.report-detail-v2-footer button { flex:none; padding:1.2rem 2rem; border-radius:1rem; background:#168D6C; color:#fff; font-size:1.55rem; font-weight:700; }
+
+/* 日常训练第二版。 */
+.training-v2 { padding:3.2rem 3.6rem; }
+.training-v2-header { display:flex; align-items:flex-start; justify-content:space-between; gap:2rem; }
+.training-v2-header p { color:#16826B; font-size:1.45rem; margin:0 0 0.4rem; }
+.training-v2-header h2 { color:#203149; font-size:3rem; margin:0; }
+.training-v2-header > span { padding:0.6rem 1.2rem; border-radius:999px; background:#EAF6F1; color:#16826B; font-size:1.4rem; }
+.training-v2-lead { color:#50637A; font-size:1.65rem; line-height:1.7; margin:1.6rem 0 2rem; }
+.training-v2-today { display:flex; align-items:center; justify-content:space-between; gap:2.4rem; padding:2.2rem 2.5rem; border-radius:1.6rem; background:#F0F8F5; border:0.1rem solid #CFE6DE; }
+.training-v2-today-main > span { display:block; color:#16826B; font-size:1.4rem; }
+.training-v2-today-main > strong { display:block; color:#203149; font-size:2.4rem; margin:0.35rem 0; }
+.training-v2-today-main p { color:#5B6D82; font-size:1.45rem; line-height:1.6; margin:0; }
+.training-v2 .assessment-report-training-button { flex:none; width:18rem; min-width:18rem; margin-top:0; }
+.training-v2-flow { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2rem; }
+.training-v2-flow article { display:flex; gap:1.2rem; padding:1.8rem; border:0.1rem solid #E0E8E5; border-radius:1.3rem; }
+.training-v2-flow article > span { display:grid; place-items:center; flex:none; width:3rem; height:3rem; border-radius:50%; background:#E5F5EF; color:#16826B; font-size:1.4rem; font-weight:700; }
+.training-v2-flow strong { display:block; color:#263750; font-size:1.65rem; }
+.training-v2-flow p { color:#607188; font-size:1.4rem; line-height:1.55; margin:0.55rem 0 0; }
+.training-v2-explain { margin-top:2rem; padding:2rem 2.2rem; border-radius:1.3rem; background:#F7F9FA; }
+.training-v2-explain h3 { color:#263750; font-size:1.9rem; margin:0 0 1.2rem; }
+.training-v2-explain > div { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.training-v2-explain p { margin:0; }
+.training-v2-explain strong,.training-v2-explain span { display:block; }
+.training-v2-explain strong { color:#354A62; font-size:1.5rem; }
+.training-v2-explain span { color:#687991; font-size:1.35rem; line-height:1.55; margin-top:0.35rem; }
+.training-v2-health-note { color:#607188; font-size:1.4rem; line-height:1.65; margin:1.8rem 0 0; }
+@media(max-width:760px){.ability-v2 .assessment-report-ability-comparison-heading{grid-template-columns:1fr auto}.ability-v2 .assessment-report-ability-status{grid-row:2}.ability-v2 .assessment-report-ability-comparison-meta{flex-direction:column;gap:0.5rem}.report-detail-v2-intro{align-items:flex-start;flex-direction:column;gap:1rem}.report-detail-v2-intro p{text-align:left}.report-detail-v2-grid,.report-detail-v2-practice,.training-v2-flow,.training-v2-explain>div{grid-template-columns:1fr}.report-detail-v2-practice dl{margin-top:0.5rem}.training-v2-today{align-items:flex-start;flex-direction:column}.training-v2 .assessment-report-training-button{width:100%;min-width:0}}

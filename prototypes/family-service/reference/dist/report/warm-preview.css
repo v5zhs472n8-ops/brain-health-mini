@@ -1,0 +1,352 @@
+/* 本地风格试稿：像一起翻阅生活手册，数据清晰，解释亲近。
+ * 色板：深蓝外框 #1e293b、纸白 #fff、叶绿 #277659、浅杏 #fff4e5、浅绿 #edf5ee、墨色 #293b37。
+ * 中文采用苹方/微软雅黑；正文 20px、补充 18px、模块标题 28px。
+ * 阅读顺序：人物信息 → 结果 → 对齐总览 → 结论/生活场景 → 小贴士 → 训练。
+ * 保留等级蓝/绿/橙及原导航；温度来自生活插画与场景分区，不增加装饰性文案。
+ */
+.report-warm {
+  --report-ink:#293b37;
+  --report-copy:#485b56;
+  --report-muted:#62716c;
+  --report-green:#277659;
+  --report-line:#e4e9e2;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+.report-warm .assessment-report-content { gap:28px; }
+.report-warm .assessment-report-card:not(.assessment-report-section-nav),
+.report-warm .wm-report-card { border-bottom:0; box-shadow:0 5px 18px #10231e12; border-radius:24px; }
+.report-warm .assessment-report-profile-card { padding:28px 36px; overflow:hidden; }
+.report-warm .assessment-report-profile-name { color:var(--report-ink); font-size:28px; }
+.report-warm .assessment-report-profile-meta { display:flex; flex-wrap:wrap; gap:6px 12px; color:var(--report-copy); font-size:18px; line-height:1.8; }
+.report-warm .assessment-report-profile-separator { color:#c4cec5; }
+.report-warm .assessment-report-disclaimer { font-size:16px; line-height:1.75; color:var(--report-muted); margin-top:14px; }
+.report-warm .assessment-report-basis-summary { color:var(--report-green); font-size:16px; min-height:44px; }
+.report-warm .assessment-report-basis[open] { position:relative; z-index:1; background:white; }
+.report-warm .assessment-report-basis-content { min-width:0; }
+.report-warm .header-v6 { grid-template-columns:250px minmax(0,1fr); gap:36px; padding:36px; }
+.report-warm .header-v6-score-column { padding:12px 0; }
+.report-warm .assessment-report-score-ring {
+  --report-score-ring-offset:-102px; --report-score-ring-width:16px;
+  width:220px; height:220px; flex-basis:220px;
+}
+.report-warm .assessment-report-score-ring::before { inset:16px; }
+.report-warm .assessment-report-score-ring-inner strong { font-size:56px; line-height:1.2; color:var(--report-ink); }
+.report-warm .assessment-report-score-ring-inner span { font-size:18px; }
+.report-warm .header-v6-title-row h2 { font-size:32px; color:var(--report-ink); font-weight:600; }
+.report-warm .header-v6-result-text { color:var(--report-copy); margin-top:14px; }
+.report-warm .header-v6-action { padding:18px 22px; background:#f2f7f0; border:0; border-radius:16px; }
+.report-warm .header-v6-action-row { padding:8px 0; }
+.report-warm .header-v6-action-row strong { font-size:20px; color:var(--report-ink); }
+.report-warm .header-v6-action-row p { font-size:18px; color:var(--report-copy); }
+.report-warm .header-v6-next { font-size:18px; line-height:1.75; color:var(--report-muted); }
+.report-warm .assessment-report-section-title,
+.report-warm .report-detail-v2-intro h2 { font-size:28px; line-height:1.5; font-weight:600; }
+.report-warm .assessment-report-section-title { color:var(--report-ink); }
+.report-warm .assessment-report-ability-card { padding:32px 36px; }
+.report-warm .assessment-report-detail-button { color:var(--report-green); font-size:18px; min-height:44px; }
+.report-warm .ability-range-summary { margin:0 0 24px; color:var(--report-copy); font-size:20px; }
+.report-warm .ability-range-table { border:1px solid var(--report-line); border-radius:16px; }
+.report-warm .ability-range-table-head { background:#f2f5ee; color:var(--report-muted); }
+.report-warm .ability-range-row { background:#fff; min-height:88px; }
+.report-warm .ability-range-row + .ability-range-row { border-color:var(--report-line); }
+.report-warm .ability-range-row--strong { background:#f2f9f3; box-shadow:inset 4px 0 #30966b; }
+.report-warm .ability-range-name,.report-warm .ability-range-score,.report-warm .ability-range-peer b { color:var(--report-ink); }
+.report-warm .ability-range-track { height:9px; background:#edf0e9; }
+.report-warm .ability-range-peer { border-color:var(--report-line); color:var(--report-copy); }
+.report-warm .ability-range-key { color:var(--report-muted); }
+.report-warm .assessment-report-module-list { gap:20px; }
+.report-warm .report-detail-v2-intro { padding:0; }
+.report-warm .report-detail-v2-intro h2 { margin:0; }
+.report-warm .wm-report-card { margin-top:0; padding:28px 36px 32px; }
+.report-warm .wm-color-card { border-top-width:4px; }
+.report-warm .wm-report-heading { gap:20px; }
+.report-warm .wm-color-heading h3 { font-weight:600; }
+.report-warm .wm-color-heading .wm-color-score { width:96px; height:96px; flex-basis:96px; }
+.report-warm .wm-color-score circle { stroke-width:7px; }
+.report-warm .wm-color-track { stroke:#edf0ea; }
+.report-warm .wm-color-heading .wm-color-score strong { color:var(--report-ink); }
+.report-warm .processing-definition { margin:-14px 0 14px 116px; }
+.report-warm .processing-definition summary { min-height:44px; }
+.report-warm .processing-definition summary > span { background:#f0f3ed; color:#58685e; font-size:16px; }
+.report-warm .processing-definition summary em,.report-warm .processing-definition summary i { color:#647266; }
+.report-warm .processing-definition[open] { padding:8px 18px 18px; margin-bottom:20px; border-radius:14px; background:#f1f5ef; }
+.report-warm .processing-definition[open] summary > span { padding-left:0; padding-right:0; background:transparent; }
+.report-warm .wm-report-card .processing-definition p { max-width:none; margin:4px 0 0; padding:0; font-size:18px; line-height:1.8; color:#58685e; }
+.report-warm .processing-result-panel { background:transparent; border:0; border-radius:0; padding:0; }
+.report-warm .memory-performance > h4 { color:var(--report-ink); font-size:22px; margin-bottom:12px; }
+.report-warm .wm-report-card p { color:var(--report-copy); font-size:20px; line-height:1.85; }
+.report-warm .wm-report-card p strong { color:var(--report-ink); font-weight:600; }
+.report-warm .wm-report-card .report-scene-invitation { margin:24px 0 0; color:var(--report-muted); font-size:18px; }
+.report-warm .memory-scenes { margin-top:14px; gap:20px; }
+.report-warm .memory-scenes > section { background:#fff4e5; border:0; border-radius:18px; padding:24px; }
+.report-warm .memory-scenes > section:nth-child(2) { background:#edf5ee; border:0; }
+.report-warm .memory-scene-title { gap:12px; margin-bottom:14px; }
+.report-warm .memory-scene-title svg { width:30px; height:30px; padding:10px; background:#ffe5bd; stroke:#96682c; border-radius:50%; }
+.report-warm .memory-scenes > section:nth-child(2) svg { background:#d8e9d9; stroke:#42794f; }
+.report-warm .memory-scene-title h5 { font-size:20px; color:var(--report-ink); }
+.report-warm .memory-performance .memory-focus { margin:24px 0 0; padding:3px 0 3px 16px; border-left:3px solid #72a98c; background:transparent; border-radius:0; }
+/* 五张卡片共用同一套贴士排版，避免早期单卡选择器造成字号差异。 */
+.report-warm .wm-report-card .expert-life-tip { min-height:0; margin:32px 0 0; padding:24px 26px 24px 98px; border:0; border-radius:22px 8px 22px 8px; background:#faf7ec; box-shadow:none; }
+.report-warm .wm-report-card .expert-life-tip::after { display:none; }
+.report-warm .wm-report-card .expert-life-tip img { left:16px; top:19px; width:66px; height:66px; }
+.report-warm .wm-report-card .expert-life-tip h4 { padding-right:90px; color:#6f5a37; font-size:20px; line-height:1.6; font-weight:600; margin:0 0 10px; }
+.report-warm .wm-report-card .expert-life-tip p { color:#625f51; font-size:18px; line-height:1.8; }
+.report-warm .wm-report-card .expert-tip-label { right:-62px; top:-8px; width:150px; min-height:30px; background:#f3d699; color:#745225; box-shadow:none; font-size:16px; transform:rotate(10deg); }
+.report-warm .training-plan { padding:32px 36px; }
+.report-warm .training-v2-lead { color:var(--report-copy); }
+.report-warm .practice-plan-panels { gap:20px; }
+.report-warm .practice-plan-panels section { padding:24px; border-radius:18px; }
+.report-warm .practice-routine { background:#edf5ee; }
+.report-warm .practice-review { background:#fff4e5; }
+.report-warm .practice-plan-panels h3 { color:var(--report-ink); }
+.report-warm .practice-plan-panels p { color:var(--report-copy); }
+.report-warm .life-practice-collection { border-color:var(--report-line); }
+.report-warm .life-practice-card { background:#fff; border-color:#e7e9df; border-top-width:3px; border-radius:16px; }
+.report-warm .life-practice-card li > span { background:#edf5ee; color:#42794f; }
+.report-warm .life-practice-card p { color:var(--report-copy); }
+.report-warm .training-plan .training-v2-today { padding:28px; border:0; background:#edf5ee; border-radius:18px; }
+.report-warm .training-plan .training-v2-today-main > strong { color:var(--report-ink); }
+.report-warm .training-plan .assessment-report-training-button { background:#277659; color:white; min-height:56px; border-radius:14px; box-shadow:0 3px 0 #19553e; font-size:22px; }
+.report-warm .training-v2-health-note { color:var(--report-muted); font-size:16px; }
+/* 训练只保留一个主入口，生活方法按需展开，复测提醒收尾。 */
+.training-path .training-daily-start { display:flex; align-items:center; justify-content:space-between; gap:32px; padding:30px; border:1px solid #d8eade; border-radius:20px; background:#eef8f1; }
+.training-personal-heading { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.training-personal-heading > svg { flex:none; width:44px; height:44px; padding:8px; border-radius:12px; background:#d8edde; stroke:#277659; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+.training-path .training-daily-start .training-personal-heading h3 { margin:0; color:#225d45; }
+.training-path .training-daily-start .training-daily-instruction { margin-top:12px; font-size:18px; }
+.training-path .training-daily-start h3 { margin:0 0 12px; color:#293b37; font-size:24px; font-weight:600; line-height:1.5; }
+.training-path .training-daily-start p { margin:0; color:#485b56; font-size:20px; line-height:1.8; }
+.training-path .training-daily-start .training-daily-reassurance { margin-top:8px; font-size:18px; color:#62716c; }
+.training-path .training-daily-button { flex:none; padding:16px 26px; min-height:60px; border:0; border-radius:14px; background:#277659; box-shadow:0 4px 0 #1c5941; color:#fff; font-size:22px; font-weight:600; cursor:pointer; }
+.training-path .life-practice-collection { margin-top:32px; padding-top:0; border-top:0; }
+.training-path .life-practice-collection > header h3 { color:#293b37; font-size:24px; font-weight:600; }
+.training-path .life-practice-collection > header p { color:#62716c; }
+.life-practice-accordion { display:grid; gap:12px; margin-top:20px; }
+.life-practice-item { --practice-surface:#fff6e7; --practice-icon-bg:#f7e6c3; --practice-ink:#926322; border:1px solid transparent; border-radius:16px; background:var(--practice-surface); }
+.life-practice-item[data-life-practice="visual-discrimination"] { --practice-surface:#f4f1fb; --practice-icon-bg:#e6dff5; --practice-ink:#756099; }
+.life-practice-item[data-life-practice="visual-search"] { --practice-surface:#eef6fa; --practice-icon-bg:#dbeaf4; --practice-ink:#397597; }
+.life-practice-item[data-life-practice="executive-function"] { --practice-surface:#fcf2eb; --practice-icon-bg:#f3dfcf; --practice-ink:#996247; }
+.life-practice-item[data-life-practice="working-memory"] { --practice-surface:#eff7f0; --practice-icon-bg:#dcecdc; --practice-ink:#437a51; }
+.life-practice-item summary { display:grid; grid-template-columns:44px minmax(0,1fr) auto; align-items:center; gap:16px; min-height:84px; padding:16px 22px; list-style:none; cursor:pointer; }
+.life-practice-icon { display:grid; place-items:center; width:44px; height:44px; border-radius:12px; background:var(--practice-icon-bg); }
+.life-practice-icon svg { width:26px; height:26px; fill:none; stroke:var(--practice-ink); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.life-practice-entry-main { display:flex; flex-wrap:wrap; align-items:center; gap:6px 16px; }
+.life-practice-item summary::-webkit-details-marker { display:none; }
+.life-practice-entry-title { color:#293b37; font-size:20px; line-height:1.6; font-weight:500; }
+.life-practice-ability { padding:3px 8px; border-radius:6px; background:#ffffffb3; color:var(--practice-ink); font-size:16px; white-space:nowrap; }
+.life-practice-toggle { display:inline-flex; align-items:center; gap:8px; font-size:18px; color:#62716c; white-space:nowrap; }
+.life-practice-toggle i { font-size:22px; line-height:1; font-style:normal; }
+.life-practice-hide,.life-practice-item[open] .life-practice-show { display:none; }
+.life-practice-item[open] .life-practice-hide { display:inline; }
+.life-practice-item[open] .life-practice-toggle i { transform:rotate(180deg); }
+.life-practice-item[open] { border-color:var(--practice-icon-bg); }
+.life-practice-instructions { margin:0 16px 16px; padding:20px; background:#ffffffd9; border-radius:12px; }
+.life-practice-instructions h4 { margin:0 0 18px; color:#62716c; font-size:18px; line-height:1.6; font-weight:400; }
+.life-practice-instructions ol { list-style:none; display:grid; gap:18px; padding:0; margin:0; }
+.life-practice-instructions li { display:flex; align-items:flex-start; gap:12px; }
+.life-practice-instructions li > span { display:grid; place-items:center; flex:0 0 28px; height:28px; border-radius:50%; background:#e2eddf; color:#42724d; font-size:18px; }
+.life-practice-instructions h5 { margin:0 0 4px; color:#293b37; font-size:20px; line-height:1.5; font-weight:600; }
+.life-practice-instructions p { margin:0; color:#485b56; font-size:18px; line-height:1.8; }
+.training-review-reminder { margin-top:28px; padding:20px 24px; border-left:3px solid #e6c387; border-radius:0 14px 14px 0; background:#fbf8f0; }
+.training-review-reminder h3 { margin:0 0 8px; color:#293b37; font-size:20px; line-height:1.5; font-weight:600; }
+.training-review-reminder p { margin:0; color:#62716c; font-size:18px; line-height:1.8; }
+.training-path .training-v2-health-note { margin-top:20px; }
+@media(max-width:800px) {
+  .training-path .training-daily-start { flex-direction:column; align-items:stretch; gap:20px; padding:24px; }
+  .training-path .training-daily-button { align-self:flex-start; }
+}
+@media(max-width:540px) {
+  .training-path .training-daily-start { padding:20px; }
+  .training-path .training-daily-start h3,.training-path .life-practice-collection > header h3 { font-size:22px; }
+  .training-path .training-daily-start p { font-size:18px; }
+  .training-path .training-daily-button { align-self:stretch; font-size:20px; }
+  .life-practice-item summary { grid-template-columns:36px minmax(0,1fr) auto; gap:12px; padding:16px 12px; }
+  .life-practice-icon { width:36px; height:36px; border-radius:10px; }
+  .life-practice-icon svg { width:24px; height:24px; }
+  .life-practice-entry-main { align-items:flex-start; flex-direction:column; gap:6px; }
+  .life-practice-entry-title { font-size:18px; }
+  .life-practice-toggle { font-size:16px; gap:4px; }
+  .life-practice-instructions { margin:0 10px 12px; padding:16px 12px; }
+  .life-practice-instructions h5 { font-size:18px; }
+}
+.report-warm summary:focus-visible,.report-warm button:focus-visible { outline:3px solid #387b63; outline-offset:4px; }
+@media(max-width:1100px) {
+  .report-warm .ability-range-table-head,.report-warm .ability-range-row { grid-template-columns:110px minmax(80px,1fr) 166px 200px; gap:14px; padding-left:18px; padding-right:18px; }
+}
+@media(max-width:900px) {
+  .report-warm .assessment-report-profile-card { padding:28px; }
+  .report-warm .header-v6 { grid-template-columns:220px minmax(0,1fr); gap:24px; padding:28px; }
+  .report-warm .header-v6-title-row h2 { font-size:28px; }
+  .report-warm .header-v6-audio { display:none; }
+  .report-warm .ability-range-table-head,.report-warm .ability-range-row { grid-template-columns:106px minmax(60px,1fr) 156px 188px; gap:10px; padding-left:14px; padding-right:14px; }
+  .report-warm .ability-range-peer { gap:2px; font-size:16px; padding-left:10px; }
+  .report-warm .ability-range-peer b { font-size:24px; }
+  .report-warm .ability-range-status { font-size:16px; }
+  .report-warm .ability-range-score-cell { gap:10px; }
+  .report-warm .wm-report-card,.report-warm .assessment-report-ability-card,.report-warm .training-plan { padding:28px; }
+}
+@media(max-width:760px) {
+  .report-warm .ability-range-row { grid-template-columns:1fr 1fr; gap:12px; padding:20px; }
+  .report-warm .ability-range-peer { padding:0; }
+  .report-warm .memory-scenes > section { padding:20px; }
+}
+@media(max-width:620px) {
+  .report-warm .assessment-report-profile-card { padding:24px; }
+  .report-warm .assessment-report-profile-name { font-size:24px; }
+  .report-warm .assessment-report-profile-meta { display:block; font-size:16px; }
+  .report-warm .assessment-report-profile-meta span { display:inline; margin-right:8px; }
+  .report-warm .assessment-report-profile-separator { display:none!important; }
+  .report-warm .assessment-report-disclaimer { clear:both; }
+  .report-warm .header-v6 { grid-template-columns:1fr; padding:24px; }
+  .report-warm .assessment-report-content { gap:22px; }
+  .report-warm .assessment-report-section-title,.report-warm .report-detail-v2-intro h2 { font-size:24px; }
+  .report-warm .assessment-report-ability-header { align-items:flex-start; gap:10px; flex-wrap:wrap; }
+  .report-warm .wm-report-card,.report-warm .assessment-report-ability-card,.report-warm .training-plan { padding:22px 18px; }
+  .report-warm .wm-report-heading { display:grid; grid-template-columns:72px 1fr; gap:6px 14px; }
+  .report-warm .wm-color-heading .wm-color-score { width:72px; height:72px; grid-row:1 / 3; }
+  .report-warm .wm-color-heading h3 { font-size:26px; }
+  .report-warm .wm-color-heading .wm-color-status { font-size:16px; justify-self:start; padding:4px 8px; }
+  .report-warm .processing-definition { margin:6px 0 14px; }
+  .report-warm .wm-report-card p { font-size:18px; }
+  .report-warm .memory-scenes { grid-template-columns:1fr; }
+  .report-warm .memory-scene-title h5 { font-size:20px; }
+  .report-warm .wm-report-card .expert-life-tip { padding:20px 18px; margin-top:28px; }
+  .report-warm .wm-report-card .expert-life-tip img { width:48px; height:48px; top:18px; left:14px; }
+  .report-warm .wm-report-card .expert-life-tip h4 { min-height:58px; padding:0 76px 0 54px; font-size:20px; }
+  .report-warm .wm-report-card .expert-tip-label { right:-50px; top:-5px; width:120px; }
+  .report-warm .practice-plan-panels section { padding:20px; }
+}
+@media(max-width:540px) {
+  .report-warm .ability-range-row { grid-template-columns:minmax(0,1fr) auto; padding:18px 16px; }
+}
+
+/* 能力总览按用户确认的旧版恢复：雷达图配彩色边框与双条比较卡片。 */
+.report-warm .ability-classic { padding:32px 24px; }
+.report-warm .ability-classic .assessment-report-section-title { color:#1d293d; font-size:32px; font-weight:700; line-height:1.5; }
+.report-warm .ability-classic .assessment-report-detail-button { color:#3599f6; font-size:20px; }
+.ability-classic .assessment-report-ability-header { margin-bottom:24px; }
+.ability-classic .assessment-report-ability-overview { display:flex; align-items:stretch; gap:32px; }
+.ability-classic .assessment-report-ability-radar-column,.ability-classic .assessment-report-ability-comparison { width:calc(50% - 16px); min-width:0; }
+.ability-classic .assessment-report-radar-svg { width:100%; height:auto; }
+.ability-classic .assessment-report-radar-legend { font-size:16px; gap:14px; flex-wrap:wrap; }
+.ability-classic .assessment-report-ability-comparison { gap:12px; }
+.ability-classic .assessment-report-ability-comparison-legend { font-size:16px; flex-wrap:wrap; gap:8px 16px; margin-bottom:4px; }
+.ability-classic .assessment-report-ability-comparison-card { padding:18px 20px 16px; border-radius:14px; }
+.ability-classic .assessment-report-ability-comparison-heading { display:flex; align-items:flex-start; flex-wrap:nowrap; gap:12px; }
+.ability-classic-identity { display:flex; align-items:center; justify-content:flex-start; flex-wrap:wrap; gap:6px 10px; min-width:0; }
+.ability-classic-identity > strong { color:#0f2747; font-size:20px; font-weight:600; line-height:32px; white-space:nowrap; }
+.ability-classic .assessment-report-ability-score { flex:none; margin-left:auto; }
+.ability-classic .assessment-report-ability-status { font-size:14px; padding:3px 10px; }
+.ability-classic .assessment-report-ability-score b { font-size:28px; }
+.ability-classic .assessment-report-ability-comparison-meta { font-size:16px; line-height:1.5; margin-top:10px; gap:8px; }
+.ability-classic .assessment-report-ability-comparison-meta small { font-size:inherit; }
+.ability-classic .assessment-report-ability-bars { margin-top:14px; }
+@media(max-width:1050px) and (min-width:801px) {
+  .ability-classic .assessment-report-ability-comparison-meta { flex-wrap:wrap; }
+}
+@media(max-width:800px) {
+  .ability-classic .assessment-report-ability-overview { flex-direction:column; gap:28px; }
+  .ability-classic .assessment-report-ability-radar-column,.ability-classic .assessment-report-ability-comparison { width:100%; }
+  .ability-classic .assessment-report-ability-radar-column { max-width:520px; margin:auto; }
+}
+@media(max-width:540px) {
+  .report-warm .ability-classic { padding:24px 18px; }
+  .report-warm .ability-classic .assessment-report-section-title { font-size:24px; }
+  .ability-classic .assessment-report-ability-comparison-card { padding:16px 14px; }
+  .ability-classic .assessment-report-ability-comparison-heading { gap:8px; }
+  .ability-classic .assessment-report-ability-comparison-meta { flex-wrap:wrap; font-size:16px; }
+}
+
+/* 总结卡片：顶部呈现分数，下方横向展开，避免长期留出空白侧栏。 */
+.report-warm .report-intro {
+  --intro-paper:#ffffff;
+  --report-line:#e7dfce;
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:32px 36px;
+  background:var(--intro-paper);
+  border:1px solid #ecdfc6;
+  border-top:4px solid #dfbb7b;
+}
+/* 浅金圆弧只作角落点缀，不承担信息含义。 */
+.report-intro::before,.report-intro::after { content:""; position:absolute; z-index:-1; border-radius:50%; pointer-events:none; }
+.report-intro::before { width:270px; height:270px; right:-100px; top:-122px; border:24px solid #edc98530; }
+.report-intro::after { width:178px; height:178px; right:-54px; top:-76px; border:1px solid #d9b57955; }
+.report-intro > * { position:relative; }
+.report-intro-result { display:grid; grid-template-columns:156px minmax(0,1fr); align-items:center; gap:28px; padding-bottom:28px; }
+.report-intro-heading h2 { margin:0 0 12px; color:var(--report-ink); font-size:32px; font-weight:600; line-height:1.4; }
+.report-intro-heading p { margin:0; color:var(--report-copy); font-size:20px; line-height:1.8; }
+.report-intro-score { --intro-accent:#347fd8; --intro-tint:#eaf2fc; display:flex; flex-direction:column; align-items:center; }
+.report-intro-score--excellent { --intro-accent:#169b70; --intro-tint:#e9f6ef; }
+.report-intro-score--focus { --intro-accent:#bc8124; --intro-tint:#fff3de; }
+.report-intro-score--pending { --intro-accent:#75847d; --intro-tint:#edf1ee; }
+.report-warm .report-intro .assessment-report-score-ring { width:156px; height:156px; flex-basis:156px; --report-score-ring-offset:-72px; --report-score-ring-width:12px; background:conic-gradient(from var(--report-score-start-angle),var(--intro-accent) 0 var(--report-score-progress),var(--intro-tint) var(--report-score-progress) 75%,transparent 75% 100%); }
+.report-warm .report-intro .assessment-report-score-ring::before { inset:12px; background:var(--intro-paper); }
+.report-intro .assessment-report-score-ring-cap--start { background:var(--intro-accent); }
+.report-intro .assessment-report-score-ring-cap--end { background:var(--intro-tint); }
+.report-warm .report-intro .assessment-report-score-ring-inner strong { font-size:46px; }
+.report-warm .report-intro .assessment-report-score-ring-inner span { font-size:16px; }
+.report-intro .assessment-report-score-ring-inner small { margin-left:4px; font-size:18px; font-weight:400; color:var(--report-muted); }
+.report-intro-grade { position:relative; margin-top:-22px; padding:3px 18px; border-radius:30px; color:var(--intro-accent); background:var(--intro-tint); font-size:18px; font-weight:600; }
+.report-intro-copy { min-width:0; }
+.report-intro-summary { padding:22px 24px; border-radius:16px; background:#f1f6f2; }
+.report-intro-copy p { margin:0; color:var(--report-copy); font-size:20px; line-height:1.85; }
+.report-intro-copy strong { color:var(--report-ink); font-weight:600; }
+.report-intro-copy .report-intro-point + .report-intro-point,
+.report-intro-copy .report-intro-summary-close { margin-top:14px; }
+.report-intro-point > strong { font-size:inherit; line-height:inherit; }
+.report-intro-supplement { margin-top:22px; padding-top:20px; border-top:1px solid var(--report-line); }
+.report-intro-copy .report-intro-supplement p { color:var(--report-muted); font-size:18px; line-height:1.8; }
+.report-intro-training-link { display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:44px; margin-top:14px; padding:8px 16px; border:1px solid #cbd8c8; border-radius:10px; background:#f4f7ef; color:var(--report-green); font:inherit; font-size:18px; font-weight:500; cursor:pointer; }
+.report-intro-training-link:hover { background:#f1f6f2; }
+.report-intro-training-link:focus-visible { outline:3px solid var(--report-green); outline-offset:3px; }
+@media(max-width:800px) {
+  .report-warm .report-intro { padding:28px; }
+}
+@media(max-width:620px) {
+  .report-warm .report-intro { padding:24px 20px; }
+  .report-intro::before { right:-168px; top:-170px; }
+  .report-intro::after { right:-122px; top:-124px; }
+  .report-intro-result { grid-template-columns:112px minmax(0,1fr); gap:18px; padding-bottom:26px; }
+  .report-intro-heading h2 { font-size:24px; margin-bottom:8px; }
+  .report-intro-summary { padding:18px 16px; border-radius:14px; }
+  .report-intro-heading p,.report-intro-copy p,.report-intro-point > strong { font-size:18px; }
+  .report-warm .report-intro .assessment-report-score-ring { width:112px; height:112px; flex-basis:112px; --report-score-ring-offset:-51px; --report-score-ring-width:10px; }
+  .report-warm .report-intro .assessment-report-score-ring::before { inset:10px; }
+  .report-warm .report-intro .assessment-report-score-ring-inner strong { font-size:34px; }
+  .report-intro .assessment-report-score-ring-inner small { font-size:16px; }
+  .report-intro-grade { font-size:16px; margin-top:-14px; padding:2px 14px; }
+}
+
+/* 加工速度仅替换定义位置的对比信息及生活场景标题。 */
+.report-warm .processing-inline-comparison { margin:0 0 24px; }
+.report-warm .processing-inline-comparison .assessment-report-ability-bars { margin-top:0; }
+.report-warm .processing-inline-comparison .assessment-report-ability-comparison-meta { font-size:18px; }
+.report-warm .wm-report-card .processing-life-heading { margin:24px 0 14px; font-size:22px; line-height:1.6; color:var(--report-ink); font-weight:600; }
+
+/* 对比条使用原配色，名称在左、数值在右。 */
+.processing-labeled-bars { display:grid; gap:12px; }
+.processing-bar-row { display:grid; grid-template-columns:90px minmax(0,1fr) 68px; align-items:center; gap:18px; color:#193654; font-size:20px; }
+.processing-bar-track { min-width:0; }
+.processing-bar-track .assessment-report-ability-bar { display:block; }
+.processing-bar-row > strong { text-align:right; font-size:24px; font-weight:600; white-space:nowrap; }
+.processing-bar-row > strong small { font-size:18px; font-weight:400; margin-left:4px; }
+.processing-inline-comparison .processing-percentile { justify-content:flex-end; }
+@media(max-width:540px){
+.processing-bar-row { grid-template-columns:76px minmax(0,1fr) 54px; gap:10px; font-size:18px; }
+.processing-bar-row > strong { font-size:22px; }
+}
+
+/* 加工速度生活场景：按确认截图展示两条编号说明。 */
+.processing-life-examples { list-style:none; padding:0; margin:0; }
+.processing-life-examples li { display:flex; align-items:flex-start; gap:20px; padding:22px 0; }
+.processing-life-examples li + li { border-top:1px solid #e5ece9; }
+.processing-example-number { display:grid; place-items:center; flex-shrink:0; width:42px; height:42px; border-radius:50%; background:#eaf3ef; color:#326c59; font-size:24px; font-weight:600; }
+.report-warm .wm-report-card .processing-life-examples h5 { margin:0 0 14px; font-size:22px; font-weight:500; line-height:1.8; color:var(--report-ink); }
+.report-warm .wm-report-card .processing-life-examples p { margin:0; }
+@media(max-width:540px){
+.processing-life-examples li { gap:14px; padding:18px 0; }
+.processing-example-number { width:34px; height:34px; font-size:20px; }
+.report-warm .wm-report-card .processing-life-examples h5 { font-size:20px; margin-bottom:10px; }
+}

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>取件达人</title>
+  <link rel="icon" href="https://cdn.keepwork.com/silvermind/games/parcel-pickup/images/game-icon.png">
+  <script src="../../shared/responsive/game-responsive.js"></script>
+  <script type="module" crossorigin src="/brain-health-mini/assets/index-Cmu4YD9X.js"></script>
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/cdn-voice-CVz52ftN.js">
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/game-audio-engine-DOCrEafo.js">
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/game-feedback-CDz-cLui.js">
+  <link rel="stylesheet" crossorigin href="/brain-health-mini/assets/index-D360KpAf.css">
+</head>
+<body>
+  <main id="gameShell">
+    <div id="flowRoot"></div>
+    <section id="gameScreen" class="hidden" data-testid="game-screen">
+      <div id="topBarMount"></div>
+      <div id="gameArea">
+        <div id="parcelPlayfield" class="pp-playfield" data-mode="memory">
+          <section class="pp-memory-panel" aria-label="记住取件码"><img src="" data-role="person" alt="邻居"><div class="pp-speech"><p>帮我取个快递吧！</p><strong data-role="memory-code"></strong><button type="button" data-action="pickup" data-help-target="pickup" data-testid="pickup-button">去取件</button></div></section>
+          <section class="pp-input-panel" aria-label="输入取件码"><div class="pp-locker" aria-hidden="true"><i></i><i></i><i></i><i></i><i data-role="locker-door"></i><i></i><i></i><i></i><i></i></div><div class="pp-keypad-card"><h2>请输入取件码</h2><output data-role="input-code" data-testid="parcel-input"></output><p data-role="input-hint" class="pp-input-hint"></p><div class="pp-keypad" data-help-target="keypad"><button type="button" data-digit="1">1</button><button type="button" data-digit="2">2</button><button type="button" data-digit="3">3</button><button type="button" data-digit="4">4</button><button type="button" data-digit="5">5</button><button type="button" data-digit="6">6</button><button type="button" data-digit="7">7</button><button type="button" data-digit="8">8</button><button type="button" data-digit="9">9</button><button type="button" data-action="delete" data-help-target="delete">删除</button><button type="button" data-digit="0">0</button><button type="button" data-action="confirm" data-help-target="confirm">确认</button></div></div></section>
+        </div>
+        <div id="lessonOverlay" class="pp-tutorial-overlay hidden" data-testid="tutorial-overlay"><div id="lessonHighlight"></div><div id="lessonCaption" class="game-help-caption"></div><div id="lessonSuccess" class="sm-game-feedback hidden" role="status"><b class="sm-game-feedback__icon" aria-hidden="true"><svg class="sm-game-feedback__check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></b><span class="sm-game-feedback__text">学会了</span></div></div>
+        <div id="roundFeedback" class="pp-feedback hidden" data-testid="round-feedback"></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

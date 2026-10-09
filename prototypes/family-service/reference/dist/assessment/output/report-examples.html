@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>报告假数据预览</title>
+  <style>
+    html { font-size:7px!important; }
+    html,body { margin:0; width:100%; height:100%; overflow:hidden; transform:none!important; background:#eeedf5!important; }
+    .preview-layout { height:100dvh; display:flex; flex-direction:column; align-items:center; }
+    .preview-controls { flex:none; width:min(100%,600px); padding:12px 16px; box-sizing:border-box; color:#234d52; font:14px/1.5 sans-serif; }
+    .preview-controls label { display:block; font-weight:700; margin-bottom:6px; }
+    .preview-controls select { width:100%; padding:10px; border:1px solid #bfd8d5; border-radius:10px; background:white; color:#234d52; font-size:15px; }
+    .preview-controls p { margin:6px 0 0; }
+    .preview-phone { width:min(100%,430px); flex:1; min-height:0; display:flex; flex-direction:column; overflow:hidden; border-radius:24px 24px 0 0; background:#1e293b; }
+    .preview-toolbar { flex:none; padding:17px; background:white; color:#234d52; text-align:center; font-size:19px; font-weight:700; }
+    #report-host { flex:1; min-height:0; width:100%; overflow:hidden; }
+    #preview-message { min-height:21px; color:#237778; }
+  </style>
+  <script type="module" crossorigin src="../assets/entry3-CwnIMKyi.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/modulepreload-polyfill-B5Qt9EMX.js">
+  <link rel="modulepreload" crossorigin href="../assets/base-component-DLCjIPPq.js">
+  <link rel="modulepreload" crossorigin href="../assets/complete-simple-Jd2-szrY.js">
+  <link rel="stylesheet" crossorigin href="../assets/complete-simple-C_Ak_UAY.css">
+</head>
+<body>
+  <div class="preview-layout">
+    <div class="preview-controls">
+      <label for="example">假数据预览 · 切换结果组合</label>
+      <select id="example"></select>
+      <p id="scores"></p>
+      <p id="preview-message" aria-live="polite">仅用于查看报告，不会保存为真实测评。</p>
+    </div>
+    <section class="preview-phone">
+      <header class="preview-toolbar">脑健康评估报告</header>
+      <main id="report-host"></main>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>认知能力筛查报告 · 研发交付Demo</title>
+<link rel="stylesheet" href="./deployed.css">
+<link rel="stylesheet" href="./header-preview.css">
+<link rel="stylesheet" href="./reading-preview.css">
+<link rel="stylesheet" href="./warm-preview.css">
+<link rel="stylesheet" href="./processing-layout.css">
+<style>body{margin:0;background:#eaf0ed;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif}#preview-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 24px;background:#fff;color:#354c44;font-size:14px;flex-wrap:wrap}#preview-controls select,#preview-controls button{font:inherit;border:1px solid #baccc4;border-radius:6px;padding:8px;background:#fff;color:#203d35}#app{height:100dvh}#preview-controls{position:fixed;bottom:8px;right:8px;z-index:100;opacity:.85;padding:6px 12px;font-size:12px;border-radius:6px}#preview-controls label{display:flex;align-items:center;gap:6px} @media(max-width:620px){#preview-controls > span{display:none}#preview-controls{max-width:calc(100vw - 16px);padding:4px 8px}#preview-controls select{max-width:190px}}#notice{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#203d35;color:#fff;padding:16px 24px;border-radius:8px;font-size:16px;z-index:100;max-width:90%;width:max-content}#notice[hidden]{display:none}</style><style>#preview-controls{display:none!important}</style>
+</head>
+<body><div id="preview-controls"><span>研发交付Demo · 示例分数</span><label>查看示例 <select id="case"><option value="mixed">当前示例（88 / 80 / 78 / 76 / 68）</option><option value="high">五项全高</option><option value="steady">五项全中 · 不同分</option><option value="equalMedium">五项全中 · 同分</option><option value="highLow">高＋低</option><option value="allBands">高＋中＋低</option><option value="low">中＋低</option><option value="allLow">五项全低 · 不同分</option><option value="equalLow">五项全低 · 同分</option><option value="ties">并列最高与最低</option><option value="partial">部分结果缺失</option><option value="empty">结果尚未形成</option></select></label></div><div id="app"></div><div id="notice" role="status" hidden></div>
+<script type="module" src="./main.js"></script>
+</body></html>

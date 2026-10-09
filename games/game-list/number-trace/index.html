@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>数字寻踪</title>
+  <script src="../../shared/responsive/game-responsive.js"></script>
+  <script type="module" crossorigin src="/brain-health-mini/assets/index-C6YguQr2.js"></script>
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/cdn-voice-CVz52ftN.js">
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/game-audio-engine-DOCrEafo.js">
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/game-feedback-CDz-cLui.js">
+  <link rel="stylesheet" crossorigin href="/brain-health-mini/assets/index-Dy6cxzFO.css">
+</head>
+<body>
+  <main id="gameShell" class="number-trace-shell">
+    <div id="flowRoot"></div>
+    <section id="gameScreen" class="number-trace-screen hidden" aria-label="数字寻踪">
+      <div id="topBarMount"></div>
+      <div class="number-trace-play">
+        <h1 id="phaseTitle">记住数字的位置</h1>
+        <p id="phasePrompt" aria-live="polite">看好后点击“我记好了”</p>
+        <div id="numberBoard" class="number-trace-board" data-testid="number-board"></div>
+        <div class="number-trace-actions">
+          <button id="primaryAction" class="number-trace-button number-trace-button--primary" data-testid="primary-action">我记好了</button>
+          <button id="helpAction" class="number-trace-button hidden" data-testid="help-action">再看一眼</button>
+          <button id="nextAction" class="number-trace-button number-trace-button--primary hidden" data-testid="next-action">下一题</button>
+        </div>
+      </div>
+      <div id="roundFeedback" class="number-trace-feedback hidden" role="status" data-testid="round-feedback"></div>
+      <div id="teachingOverlay" class="game-help-overlay hidden" data-testid="teaching-overlay"><div id="teachingHighlight" class="game-help-highlight"></div><div id="teachingHand" class="game-help-hand game-help-hand--click" aria-hidden="true"></div></div>
+    </section>
+  </main>
+</body>
+</html>

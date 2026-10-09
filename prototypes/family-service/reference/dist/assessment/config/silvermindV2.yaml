@@ -1,0 +1,153 @@
+﻿---
+llm_model: doubao-lite
+name: 小伴
+description: 你是老人陪聊助手"小伴"。像贴心晚辈一样与老人交流，语气温暖、耐心、自然，重视倾听、记忆激活和情绪关怀。
+workspace: silvermind
+mountFolder: maisi/maisi/silvermindWorkspace
+portrait: "https://api.keepwork.com/ts-storage/siteFiles/47901/raw#1773589935415image.png"
+searchPaths:
+  # skills 统一存放在 skill-hub 仓库并发布到 CDN；baseUrlLocal 仅 localhost 生效，
+  # 指向 vite dev 的 /skill-hub/ 中间件（伺服兄弟目录 skill-hub/），修改即生效。
+  - prefix: "silvermind/skills"
+    baseUrl: "https://cdn.keepwork.com/skill-hub/skills/"
+    baseUrlLocal: "/skill-hub/skills/"
+  - prefix: "silvermind/prompts"
+    baseUrl: "silvermindWorkspace/prompts/"
+historyLength: 20  
+keepHistory: true
+keepFullHistory: true
+imageConfig:
+  maxImageBytes: 32000
+  autoConvertBase64ToURL: true
+  maxImageHistoryCount: 2
+summarizeAgent:
+  config: "./config/silvermind_summarizeV2.yaml"
+  silentTickInterval: 10
+  maxRounds: 5
+  maxTextLength: 8000
+  # keepRecentRounds 字段当前是“已配置但未落实”的参数；它的预期语义是：摘要旧历史时，保留最近 3 组完整的 user + assistant 对话原文，较早内容压缩为摘要。
+  keepRecentRounds: 3
+  mode: "append"
+skipHistoryServerLog: false
+avatar_only: false
+videoActions:
+  idle:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/idle_new.webp"
+  idle2:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/read.webp"
+  talk:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/talk.webp"
+  写字|记录|writing:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/write.webp"
+  查询|编程|用平板|coding:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/pad.webp"
+  点赞|喜欢|like:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/like.webp"
+  鼓掌|clap:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/clap.webp"
+  guide|引导:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/guide.webp"
+  listen|倾听:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/listen.webp"
+  wave|挥手:
+    url: "https://cdn.keepwork.com/digitalhuman/v1/female/femalewaiter-new/wave.webp"
+tools:
+  read:
+    enabled: true
+  search:
+    enabled: true
+  app:
+    enabled: true
+  agent.runAsyncAgentTask:
+    enabled: true
+  execute.run_app_cmd:
+    enabled: true
+pageRouters:
+  splash:
+    agent: "prompts/sop-splash.md"
+    wakeupText: "${await copilot.getWakeupWord('splash')}"
+    #heartbeatText: "${await copilot.getAppState()}[heartbeat](continue)"
+    #heartbeatInterval: "30s"
+    #heartbeatMaxCount: 3
+  assessment-home:
+    agent: "prompts/sop-assessment.md"
+    wakeupText: "(continue)"
+  profile:
+    agent: "prompts/sop-profile-collection.md"
+    wakeupText: "(continue)"
+  game-catalog:
+    agent: "prompts/sop-training-games.md"
+    wakeupText: "(continue)"
+    tools:
+      app:
+        enabled: false
+  memoir:
+    agent: "prompts/sop-memoir.md"
+    wakeupText: "(continue)"
+    tools:
+      app:
+        enabled: false
+      execute.run_app_cmd:
+        enabled: false
+bracketAction:
+  enabled: true
+  autoplay: true
+  duration: 3
+textToSpeech:
+  enabled: true
+  provider: speechRTC
+  voiceType: "zh_female_tianmeiyueyue_moon_bigtts"
+  ignoreBracketText: true
+voiceChat:
+  appId: "69883f4ae00f9e017600b901"
+  agentUserId: "ChatBot01"
+  agentConfig:
+    UserId: "ChatBot01"
+    EnableConversationStateCallback: true
+  config:
+    ASRConfig:
+      Provider: "volcano"
+      ProviderParams:
+        Mode: "bigmodel"
+        AppId: "3065448513"
+        ApiResourceId: "volc.bigasr.sauc.duration"
+      VADConfig:
+        AIVAD: true
+        SilenceTime: 1800
+    TTSConfig:
+      Provider: "volcano_bidirection"
+      ProviderParams:
+        app:
+          appid: "3065448513"
+        audio:
+          # More voice_type values: https://www.volcengine.com/docs/6561/1257544?lang=zh
+          voice_type: "zh_female_tianmeiyueyue_moon_bigtts"
+          speech_rate: 0
+        ResourceId: "volc.service_type.10029"
+      # IgnoreBracketText: filter TTS for text inside brackets
+      # 1:（）, 2: (), 3:【】, 4: [], 5: {}
+      IgnoreBracketText: [1,2,3,4,5]
+    LLMConfig:
+      Mode: "ArkV3"
+      # ep-20260315160200-s6fg7: doubao seed mini 2.0
+      # ep-20260330142752-whgdc: doubao seed 2.0 lite
+      # ep-20260225155953-hhjsd: doubao seed 2.0 pro
+      # ep-20260120142358-jmtmb: doubao seed 1.8
+      # ep-20260317180337-xgm67: doubao flash 1.6
+      # ep-20260120113739-8hkdc: doubao 1.6 vision
+      EndPointId: "ep-20260330142752-whgdc"
+      VisionConfig:
+        Enable: true
+      ThinkingType: "disabled"
+      Prefill: true
+      Tools: []
+    SubtitleConfig:
+      SubtitleMode: 1
+    InterruptMode: 0
+    InterruptConfig:
+      InterruptSpeechDuration: 1000
+initial:
+  message: ""
+quick_replies: ["你好","开始测评","你能做什么？"]
+---
+${await copilot.read_file({filePath: "prompts/sop-splash.md", startLine: 1, endLine: 200})}

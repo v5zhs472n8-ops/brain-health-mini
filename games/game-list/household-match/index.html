@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>好物成双</title>
+  <link rel="icon" href="data:,">
+  <script src="../../shared/responsive/game-responsive.js"></script>
+  <script type="module" crossorigin src="/brain-health-mini/assets/index-CoV196qs.js"></script>
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/cdn-voice-CVz52ftN.js">
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/game-audio-engine-DOCrEafo.js">
+  <link rel="modulepreload" crossorigin href="/brain-health-mini/assets/game-feedback-CDz-cLui.js">
+  <link rel="stylesheet" crossorigin href="/brain-health-mini/assets/index-BaXlWYsj.css">
+</head>
+<body>
+  <div id="gameShell">
+    <div id="flowRoot"></div>
+    <section id="gameScreen" class="hidden" data-testid="game-screen">
+      <div id="topBarMount"></div>
+      <div id="gameArea">
+        <div id="boardHeading"><span id="pairProgress"></span><span id="mistakeProgress"></span></div>
+        <div id="boardStage"><div id="mainBoard" class="hm-board" data-testid="game-board"></div></div>
+        <div id="bottomArea"><button id="btnHint" class="hm-hint hidden" data-testid="hint-btn">给我一个提示</button></div>
+        <div id="lessonOverlay" class="game-help-overlay hidden"><div id="lessonCaption" class="game-help-caption" data-testid="lesson-caption"></div><div id="lessonHand" class="game-help-hand sm-demo-hand" aria-hidden="true"></div><div id="lessonSuccess" class="sm-game-feedback hidden" role="status"><b class="sm-game-feedback__icon" aria-hidden="true"><svg class="sm-game-feedback__check" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></b><span class="sm-game-feedback__text">学会了</span></div></div>
+        <div id="boardFeedback" class="hm-feedback hidden" role="status" data-testid="board-feedback"></div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+/* =================== 音频设置：共用区块（测试面板 / 产品设置页共用） =================== */
+
+.sm-audio-settings {
+  --sm-audio-text: var(--sm-flow-text, #2b2a33);
+  --sm-audio-text-dim: var(--sm-flow-text-secondary, #6c6a78);
+  --sm-audio-accent: var(--sm-flow-accent, #f5a85d);
+  --sm-audio-accent-contrast: var(--sm-flow-accent-contrast, #ffffff);
+  --sm-audio-track: var(--sm-flow-surface-2, rgba(43, 42, 51, 0.14));
+  --sm-audio-surface: var(--sm-flow-surface, rgba(255, 255, 255, 0.92));
+  --sm-audio-border: var(--sm-flow-border, rgba(43, 42, 51, 0.16));
+  --sm-audio-muted: #9a98a6;
+  --sm-audio-row-height: 4.8rem;
+  --sm-audio-thumb: 3.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: var(--sm-audio-text);
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+.sm-audio-settings__row {
+  display: grid;
+  grid-template-columns: 8rem 6.4rem minmax(16rem, 1fr) 4.8rem auto;
+  align-items: center;
+  gap: 1.2rem;
+  min-height: var(--sm-audio-row-height);
+}
+
+.sm-audio-settings__label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sm-audio-settings__toggle,
+.sm-audio-settings__preview,
+.sm-audio-settings__reset {
+  min-height: var(--sm-audio-row-height);
+  padding: 0 1.6rem;
+  border: 0.2rem solid var(--sm-audio-border);
+  border-radius: 2.4rem;
+  background: var(--sm-audio-surface);
+  color: var(--sm-audio-text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.sm-audio-settings__toggle:active,
+.sm-audio-settings__preview:active,
+.sm-audio-settings__reset:active {
+  transform: scale(0.96);
+}
+
+.sm-audio-settings__toggle[aria-checked="true"] {
+  background: var(--sm-audio-accent);
+  border-color: var(--sm-audio-accent);
+  color: var(--sm-audio-accent-contrast);
+}
+
+.sm-audio-settings__toggle[aria-checked="false"] {
+  color: var(--sm-audio-muted);
+}
+
+.sm-audio-settings__preview[aria-pressed="true"] {
+  background: var(--sm-audio-accent);
+  border-color: var(--sm-audio-accent);
+  color: var(--sm-audio-accent-contrast);
+}
+
+.sm-audio-settings__preview:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ---- 滑杆：老年用户，命中高度 4.8rem，拇指 ≥ 3.2rem ---- */
+.sm-audio-settings__range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: var(--sm-audio-row-height);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sm-audio-settings__range:focus-visible {
+  outline: 0.3rem solid var(--sm-audio-accent);
+  outline-offset: 0.2rem;
+  border-radius: 2.4rem;
+}
+
+.sm-audio-settings__range::-webkit-slider-runnable-track {
+  height: 1.2rem;
+  border-radius: 0.6rem;
+  background: var(--sm-audio-track);
+}
+
+.sm-audio-settings__range::-moz-range-track {
+  height: 1.2rem;
+  border-radius: 0.6rem;
+  background: var(--sm-audio-track);
+}
+
+.sm-audio-settings__range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--sm-audio-thumb);
+  height: var(--sm-audio-thumb);
+  margin-top: calc((1.2rem - var(--sm-audio-thumb)) / 2);
+  border: 0.3rem solid var(--sm-audio-accent-contrast);
+  border-radius: 50%;
+  background: var(--sm-audio-accent);
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.25);
+}
+
+.sm-audio-settings__range::-moz-range-thumb {
+  width: var(--sm-audio-thumb);
+  height: var(--sm-audio-thumb);
+  border: 0.3rem solid var(--sm-audio-accent-contrast);
+  border-radius: 50%;
+  background: var(--sm-audio-accent);
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.25);
+}
+
+.sm-audio-settings__row.is-muted .sm-audio-settings__range::-webkit-slider-thumb {
+  background: var(--sm-audio-muted);
+}
+
+.sm-audio-settings__row.is-muted .sm-audio-settings__range::-moz-range-thumb {
+  background: var(--sm-audio-muted);
+}
+
+.sm-audio-settings__row.is-muted .sm-audio-settings__value {
+  color: var(--sm-audio-muted);
+}
+
+.sm-audio-settings__value {
+  min-width: 4.8rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.sm-audio-settings__actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sm-audio-settings__hint {
+  margin: 0;
+  color: var(--sm-audio-text-dim);
+  font-size: 1.6rem;
+}
+
+.sm-audio-settings__status {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1.2rem;
+  margin: 0;
+  padding-top: 1.2rem;
+  border-top: 0.1rem dashed var(--sm-audio-border);
+  color: var(--sm-audio-text-dim);
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 1.3rem;
+  word-break: break-all;
+}
+
+.sm-audio-settings__status dt,
+.sm-audio-settings__status dd {
+  margin: 0;
+}
+
+/* =================== 浮动 dev 面板（左下角） =================== */
+
+.sm-audio-settings-host {
+  position: fixed;
+  left: 1.6rem;
+  bottom: 1.6rem;
+  z-index: 99998;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+.sm-audio-settings-fab {
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(20, 20, 30, 0.85);
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.35);
+}
+
+.sm-audio-settings-host.is-open .sm-audio-settings-fab {
+  display: none;
+}
+
+.sm-audio-settings-panel {
+  width: min(56rem, 92vw);
+  padding: 1.2rem 1.6rem 1.6rem;
+  border: 0.1rem solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.6rem;
+  background: rgba(20, 20, 30, 0.95);
+  color: #e0e0e0;
+  box-shadow: 0 0.8rem 2.4rem rgba(0, 0, 0, 0.5);
+}
+
+.sm-audio-settings-panel .sm-audio-settings {
+  --sm-audio-text: #e0e0e0;
+  --sm-audio-text-dim: #9a9a9a;
+  --sm-audio-accent: #4fc3f7;
+  --sm-audio-accent-contrast: #101018;
+  --sm-audio-track: rgba(255, 255, 255, 0.16);
+  --sm-audio-surface: rgba(255, 255, 255, 0.06);
+  --sm-audio-border: rgba(255, 255, 255, 0.2);
+  font-size: 1.6rem;
+  --sm-audio-row-height: 4rem;
+  --sm-audio-thumb: 2.8rem;
+}
+
+.sm-audio-settings-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 0.1rem solid rgba(255, 255, 255, 0.12);
+}
+
+.sm-audio-settings-panel__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.sm-audio-settings-panel__close {
+  width: 3.2rem;
+  height: 3.2rem;
+  border: none;
+  border-radius: 0.6rem;
+  background: transparent;
+  color: #bbb;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.sm-audio-settings-panel__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}

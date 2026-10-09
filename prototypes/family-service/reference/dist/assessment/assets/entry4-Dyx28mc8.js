@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{S as e}from"./supplementary-profile-3kCMJip5.js";import"./base-component-DLCjIPPq.js";new e().mount(document.getElementById("preview-host"),{onContinue:()=>{location.href="/output/report-examples.html"}});

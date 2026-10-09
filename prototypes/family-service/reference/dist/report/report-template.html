@@ -1,0 +1,150 @@
+<!-- 复用已确认Demo的页面结构；动态结果与文案由main.js和report-renderer.js填充。 -->
+
+      <div class="h-full flex flex-col assessment-report-page report-warm">
+        <!-- 顶部导航栏（返回按钮样式/位置与报告列表页统一） -->
+        <div class="assessment-report-header">
+          <div class="assessment-report-header-inner">
+            <button onclick="App.currentPage.handleBack()" class="btn-press flex items-center justify-center assessment-report-back-button" aria-label="返回上一页" data-ai-hint="返回上一个页面">
+              <svg width="2.8rem" height="2.8rem" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
+            </button>
+            <h1 class="font-bold assessment-report-title">认知能力测评报告</h1>
+          </div>
+        </div>
+
+        <div class="assessment-report-content">
+
+
+
+          <!-- 区块一：标题 + 用户信息 -->
+          <div class="assessment-report-card assessment-report-profile-card">
+            
+            <h2 class="assessment-report-profile-name">测评人：陈女士</h2>
+            <div class="assessment-report-profile-meta">
+              <span>性别：女</span>
+              <span class="assessment-report-profile-separator">|</span>
+              <span>年龄：68</span>
+              <span class="assessment-report-profile-separator">|</span>
+              <span>测评时间：2026-09-18</span>
+              <span class="assessment-report-profile-separator">|</span>
+              <span>用时：00:18:32</span>
+            </div>
+            <p class="assessment-report-disclaimer">本报告用于帮助了解当前表现，不作为医学诊断或治疗依据；如需帮助，请咨询专业医师。</p>
+            <details class="assessment-report-basis">
+              <summary class="assessment-report-basis-summary">
+                <span>了解报告依据</span>
+                <span class="assessment-report-basis-summary-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" focusable="false">
+                    <path d="M7 10l5 5 5-5"></path>
+                  </svg>
+                </span>
+              </summary>
+              <div class="assessment-report-basis-content">
+                <div class="assessment-report-basis-content-inner">
+                  <div class="assessment-report-basis-table">
+                    <div class="assessment-report-basis-cell assessment-report-basis-label">分数怎么算来</div>
+                    <div class="assessment-report-basis-cell">综合各项测评任务的结果，并结合相应的同龄参考数据形成。</div>
+                    <div class="assessment-report-basis-cell assessment-report-basis-label">结果怎么看</div>
+                    <div class="assessment-report-basis-cell">速度、正确性和任务难度需要一起理解，不能只用一项原始数据判断能力。</div>
+                    <div class="assessment-report-basis-cell assessment-report-basis-label">建议为什么这样安排</div>
+                    <div class="assessment-report-basis-cell">参考老年认知训练研究，重视规律参与，并适当关注本次较费力的能力。</div>
+                    <div class="assessment-report-basis-cell assessment-report-basis-label">报告的使用边界</div>
+                    <div class="assessment-report-basis-cell">一次表现会受到睡眠、情绪和身体状态影响，本报告不能代替医学诊断。</div>
+                  </div>
+                  <p class="assessment-report-basis-reference">参考说明：主要参考：ACTIVE老年认知训练试验，以及计算机化认知训练、数字干预和训练依从性的系统综述与元分析。</p>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <nav class="assessment-report-card assessment-report-section-nav" aria-label="报告内容导航">
+            <button type="button" class="assessment-report-section-nav-item is-active" data-report-section="report-overview" aria-current="page" onclick="App.currentPage.scrollToReportSection('report-overview')">整体结果</button>
+            <button type="button" class="assessment-report-section-nav-item" data-report-section="report-abilities" onclick="App.currentPage.scrollToReportSection('report-abilities')">能力总览</button>
+            <button type="button" class="assessment-report-section-nav-item" data-report-section="report-details" onclick="App.currentPage.scrollToReportSection('report-details')">逐项解读</button>
+            <button type="button" class="assessment-report-section-nav-item" data-report-section="report-training" onclick="App.currentPage.scrollToReportSection('report-training')">日常训练</button>
+          </nav>
+
+          <!-- 整体结果：分数只占顶部，能力总结和补充说明使用整张卡片宽度。 -->
+          <section id="report-overview" class="assessment-report-card report-intro" data-report-section-content="">
+            <div class="report-intro-result">
+              <div class="report-intro-score report-intro-score--good">
+                <div class="assessment-report-score-ring" style="--report-score-progress: 58.5%; --report-score-mark-angle: 435.6deg;">
+                  <span class="assessment-report-score-ring-cap assessment-report-score-ring-cap--start" aria-hidden="true"></span>
+                  <span class="assessment-report-score-ring-cap assessment-report-score-ring-cap--end" aria-hidden="true"></span>
+                  <div class="assessment-report-score-ring-inner"><strong>78<small>分</small></strong><span>综合参考分</span></div>
+                </div>
+                <span class="report-intro-grade">良好</span>
+              </div>
+              <div class="report-intro-heading"><h2></h2></div>
+            </div>
+            <div class="report-intro-copy"></div>
+          </section>
+
+          <!-- 区块四：五项认知能力总览 -->
+          <section id="report-abilities" class="assessment-report-card assessment-report-ability-card ability-classic" data-report-section-content="">
+            <!-- 标题栏 + 测评详情按钮 -->
+            <div class="flex items-center justify-between assessment-report-ability-header">
+              <h2 class="font-bold assessment-report-section-title">五项认知能力总览</h2>
+              <button onclick="App.currentPage.showDetailModal()" class="btn-press assessment-report-detail-button">
+                <span>测评详情</span>
+                <span class="assessment-report-detail-arrow">›</span>
+              </button>
+            </div>
+
+            <div class="assessment-report-ability-overview">
+              <div class="assessment-report-ability-radar-column">
+                <div class="assessment-report-radar"></div>
+                <div class="assessment-report-radar-legend">
+                  <span class="assessment-report-radar-legend-item"><i class="assessment-report-radar-data-marker"></i>蓝色区域：本次得分</span>
+                  <span class="assessment-report-radar-legend-item"><i class="assessment-report-radar-peer-marker"></i>金色虚线：参考均值</span>
+                </div>
+              </div>
+              <div class="assessment-report-ability-comparison">
+
+                
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+              </div>
+            </div>
+          </section>
+
+          <!-- 模块解读卡片列表 -->
+          <div id="report-details" class="assessment-report-module-list" data-report-section-content=""></div>
+
+          <section id="report-training" class="assessment-report-card assessment-report-training-card training-v2 training-plan training-path" data-report-section-content="">
+            <header class="training-v2-header">
+              <h2 class="font-bold assessment-report-section-title">接下来怎么做</h2>
+            </header>
+            <p class="training-v2-lead">从了解自己的表现，到每天练一点，接下来我们陪您一起做。</p>
+
+            <section class="training-daily-start" aria-labelledby="training-daily-title">
+              <div>
+                <div class="training-personal-heading"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="6" width="20" height="23" rx="4"></rect><rect x="12" y="3" width="10" height="6" rx="2"></rect><path d="m12 18 3 3 7-8M12 25h10"></path></svg><h3 id="training-daily-title">根据测评结果，为您定制训练</h3></div>
+                <p class="training-daily-instruction">根据您本次各项能力的表现，我们为您安排了兼顾不同能力、各有侧重的训练内容。您可以每天选一个方便的时间，跟着当天的计划练习，逐步养成规律练习的习惯。</p>
+                <p class="training-daily-reassurance">偶尔中断不用补做，回来继续就好。</p>
+              </div>
+              <button type="button" class="btn-press training-daily-button" onclick="window.previewDailyTraining()">进入今日训练</button>
+            </section>
+
+            
+      <div data-life-practice-slot=""></div>
+    
+
+            <aside class="training-review-reminder">
+              <h3>过一段时间，再看看变化</h3>
+              <p>建议坚持规律训练约12周后，再进行一次测评，了解这段时间各项能力的变化。复测时，尽量选择与本次睡眠、精神状态相近的时候。</p>
+            </aside>
+
+            <p class="training-v2-health-note"><strong>什么情况下需要进一步咨询？</strong><br>如果近期记忆、反应或做事能力出现明显变化，并已影响日常生活，建议与家人沟通，咨询专业医生。本报告仅供筛查参考，不能代替医学诊断。</p>
+          </section>
+
+        </div>
+      </div>
+    
