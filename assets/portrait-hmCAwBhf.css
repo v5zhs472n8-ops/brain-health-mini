@@ -1,0 +1,227 @@
+/* 仅在小程序宿主的同源 iframe 内启用；原游戏与平板入口保持原样。 */
+html[data-mini-game]{font-size:6px!important}
+html[data-mini-game] body{font-family:"PingFang SC","Microsoft YaHei",sans-serif}
+.sm-showcase-intro-screen.sm-flow-screen--intro{padding:0!important;overflow-y:auto!important}
+.sm-showcase-intro-panel.sm-flow-panel--intro{width:100%!important;height:auto!important;min-height:100%!important;padding:12px!important;display:flex!important;flex-direction:column!important;gap:16px!important}
+.sm-showcase-intro-content{display:flex!important;flex-direction:column!important;gap:16px!important;flex:none!important;min-height:0!important}
+.sm-showcase-intro-content>.sm-flow-slot{height:auto!important;flex:none!important}
+.sm-showcase-intro-showcase,.sm-showcase-intro-guide,.sm-showcase-demo-panel{height:auto!important}
+.sm-showcase-demo-card{padding:10px!important;height:auto!important}
+.sm-showcase-demo-stage-shell{width:100%!important;max-width:none!important;height:auto!important;aspect-ratio:16/9!important}
+.sm-showcase-intro-main-actions{position:sticky;bottom:0;padding:10px 0;margin-top:auto;z-index:4}
+.sm-showcase-intro-btn{min-height:48px!important;width:100%!important;font-size:19px!important}
+.sm-showcase-intro-guide-card-body,.sm-showcase-guide{font-size:15px!important;line-height:1.6!important}
+.sm-showcase-demo-fullscreen-btn{min-height:36px;font-size:14px!important}
+.sm-intro-topbar{gap:6px!important;padding:0!important;min-height:48px}
+.sm-intro-topbar__title{font-size:18px!important;min-width:0!important;padding:0 10px!important}
+.sm-intro-topbar__record{font-size:12px!important;padding:0 6px!important}
+.sm-intro-topbar__home-btn,.sm-back-btn{min-width:44px!important;min-height:44px!important}
+.top-bar{padding:6px!important;gap:6px!important;flex-wrap:wrap;min-height:54px!important;height:auto!important}
+.top-bar-statuses{gap:5px!important;flex:1;justify-content:flex-end}
+.pause-btn{min-width:44px!important;min-height:44px!important;padding:0 10px!important;font-size:14px!important}
+.info-group{min-width:0!important;gap:4px!important;padding:5px!important;font-size:14px!important}
+.info-group svg,.info-icon{width:18px!important;height:18px!important}
+.sm-showcase-demo-overlay{padding:14px!important;gap:18px!important}
+.sm-showcase-demo-overlay .sm-showcase-demo-overlay-stage-wrapper{width:100%!important;height:auto!important;aspect-ratio:16/9!important}
+.sm-showcase-demo-overlay .sm-showcase-demo-overlay-caption{width:100%!important;font-size:18px!important;min-height:100px!important}
+.sm-showcase-demo-overlay-close{min-width:44px!important;min-height:44px!important;top:12px!important;right:12px!important}
+.sm-session-result-screen{overflow-y:auto!important}
+.sm-session-result-shell{height:auto!important;min-height:100%!important;padding:12px!important}
+.sm-session-result-layout{display:flex!important;flex-direction:column!important;gap:16px!important;height:auto!important}
+.sm-session-result-board,.sm-session-result-side{width:100%!important;min-width:0!important}
+.sm-session-result-board{order:2}
+.sm-session-result-continue{min-height:48px!important;font-size:18px!important}
+.sm-session-dialog{max-width:calc(100vw - 24px)!important}
+/* 巧辨墨色：题目上置，最多八个答案排成两列。 */
+[data-mini-game="color-trap"] .ct-question-group{gap:26px;padding:16px;justify-content:center}
+[data-mini-game="color-trap"] .ct-proof{width:260px;height:160px}
+[data-mini-game="color-trap"] .ct-proof::before{inset:-22px -15px;width:290px;height:200px}
+[data-mini-game="color-trap"] #proofWord{font-size:80px}
+[data-mini-game="color-trap"] .ct-stamp{top:110px}
+[data-mini-game="color-trap"] .ct-answers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:18px 14px}
+[data-mini-game="color-trap"] .ct-answer{width:100%;height:60px;font-size:26px}
+[data-mini-game="color-trap"] .ct-answer::before{inset:-9px -4px;width:calc(100% + 8px);height:84px;background-size:100% 100%}
+[data-mini-game="color-trap"] .ct-training-hint{font-size:16px;max-width:94%;width:max-content;top:8px}
+/* 数字寻踪：保留棋盘的行列和题目，仅放大手机触点。 */
+[data-mini-game="number-trace"] .number-trace-play{padding:22px 12px;gap:10px}
+[data-mini-game="number-trace"] .number-trace-play h1{font-size:24px}
+[data-mini-game="number-trace"] #phasePrompt{font-size:18px}
+[data-mini-game="number-trace"] .number-trace-board{width:100%!important;max-width:420px;height:auto!important;aspect-ratio:1;gap:8px;padding:8px}
+[data-mini-game="number-trace"] .number-trace-board:has(.number-trace-cell:nth-child(20)){aspect-ratio:5/4}
+[data-mini-game="number-trace"] .number-trace-cell{font-size:30px!important}
+[data-mini-game="number-trace"] .number-trace-button{font-size:18px;min-width:0;min-height:48px;padding:12px 24px}
+[data-mini-game="number-trace"] .number-trace-actions{height:auto}
+/* 好物成双：沿用原行列数，不缩小为横屏舞台。 */
+[data-mini-game="household-match"] #gameScreen{justify-content:flex-start}
+[data-mini-game="household-match"] #topBarMount,[data-mini-game="parcel-pickup"] #topBarMount{width:100%;height:auto}
+[data-mini-game="household-match"] #gameArea{width:100%;height:auto;flex:1;padding:12px;display:flex;flex-direction:column}
+[data-mini-game="household-match"] #boardHeading{font-size:15px;padding:0;height:38px}
+[data-mini-game="household-match"] #boardStage{height:auto;flex:1}
+[data-mini-game="household-match"] #boardStage .hm-board{width:100%;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:8px}
+[data-mini-game="household-match"] #boardStage .hm-card{width:100%;height:auto;aspect-ratio:1}
+[data-mini-game="household-match"] #bottomArea{height:64px}
+[data-mini-game="household-match"] .hm-hint{font-size:16px;min-height:44px}
+[data-mini-game="household-match"] #lessonCaption{font-size:17px;max-width:90%}
+/* 取件达人：记忆与输入本来是不同阶段；键盘保持完整，不减按键。 */
+[data-mini-game="parcel-pickup"] #gameArea{width:100%;height:auto;flex:1;min-height:0}
+[data-mini-game="parcel-pickup"] .pp-playfield{padding:16px!important}
+[data-mini-game="parcel-pickup"] .pp-playfield[data-mode="memory"] .pp-speech{top:25px;right:0;width:85%;padding:18px}
+[data-mini-game="parcel-pickup"] .pp-speech p{font-size:22px}
+[data-mini-game="parcel-pickup"] .pp-speech strong{font-size:36px}
+[data-mini-game="parcel-pickup"] .pp-speech button{min-height:48px;font-size:18px}
+[data-mini-game="parcel-pickup"] .pp-playfield[data-mode="input"] .pp-input-panel{grid-template-columns:1fr;grid-template-rows:90px auto;gap:14px;align-content:center}
+[data-mini-game="parcel-pickup"] .pp-locker{height:90px;padding:8px;gap:4px;border-width:4px}
+[data-mini-game="parcel-pickup"] .pp-locker i::after{height:10px;top:25%}
+[data-mini-game="parcel-pickup"] .pp-keypad-card{height:auto;padding:12px;border-width:4px}
+[data-mini-game="parcel-pickup"] .pp-keypad-card h2{font-size:21px}
+[data-mini-game="parcel-pickup"] .pp-keypad{grid-template-rows:repeat(4,48px);gap:8px}
+[data-mini-game="parcel-pickup"] .pp-keypad button{font-size:24px}
+[data-mini-game="parcel-pickup"] .pp-keypad button[data-action]{font-size:18px}
+[data-mini-game="parcel-pickup"] .pp-keypad-card output{height:48px;font-size:28px}
+/* 转角成画：原棋盘接近正方形，保留 Canvas 坐标映射。 */
+[data-mini-game="corner-painting"] #phaseText{font-size:17px;line-height:1.5}
+[data-mini-game="corner-painting"] .cp-actions{flex-wrap:wrap;flex-basis:auto;padding:12px}
+[data-mini-game="corner-painting"] .cp-actions button{min-width:120px;min-height:48px;font-size:17px}
+.sm-showcase-intro-panel .sm-flow-main{width:100%!important;height:auto!important;min-height:0!important;display:flex!important;flex-direction:column!important;gap:16px!important}
+.sm-showcase-intro-content{width:100%!important;height:auto!important;min-height:0!important}
+.sm-showcase-intro-guide-card,.sm-showcase-guide-card{height:auto!important;min-height:0!important;overflow:visible!important}
+.sm-showcase-intro-guide-card-body{height:auto!important;max-height:none!important;overflow:visible!important}
+.sm-showcase-intro-main-actions{position:static!important}
+@media(max-height:650px){
+ [data-mini-game="color-trap"] .ct-proof{height:110px;width:230px}
+ [data-mini-game="color-trap"] .ct-proof::before{height:150px;width:260px}
+ [data-mini-game="color-trap"] #proofWord{font-size:60px}
+ [data-mini-game="color-trap"] .ct-question-group{gap:20px}
+ [data-mini-game="color-trap"] .ct-answers{gap:10px}
+ [data-mini-game="color-trap"] .ct-answer{height:48px;font-size:22px}
+ [data-mini-game="color-trap"] .ct-answer::before{height:65px}
+}
+.sm-showcase-intro-panel .sm-flow-main-content{width:100%!important;height:auto!important;min-height:0!important;display:flex!important;flex-direction:column!important;flex:none!important;gap:16px!important}
+.sm-showcase-intro-panel .sm-flow-slot{width:100%!important;height:auto!important;flex:none!important}
+.sm-showcase-intro-guide-list{height:auto!important}
+.sm-showcase-intro-guide-card:first-child{flex:none!important}
+@media(max-width:340px){[data-mini-game="household-match"] #boardStage .hm-board{gap:6px}.sm-intro-topbar__record{font-size:11px!important}.sm-intro-topbar__title{font-size:16px!important}}
+/* 新增四款只在小程序宿主启用；题目、计时与计分沿用游戏实现。 */
+/* 箱子比拼：两只箱子共同等比缩放，保持大小差异和重量标签的位置。 */
+[data-mini-game="box-choice"] .box-choice-stage{width:100%;height:100%}
+[data-mini-game="box-choice"] .box-choice-stage>.box-choice-instruction{left:0;top:19%;width:100%;height:70px;font-size:40px;letter-spacing:3px;-webkit-text-stroke:3px #5c3a21}
+[data-mini-game="box-choice"] .box-choice-stage>.box-choice-boxes{left:50%;top:calc(65% - 44rem);transform:translateX(-50%) scale(var(--mini-box-scale,.65));transform-origin:center bottom}
+/* 正误反馈位于口令与箱子之间，覆盖横屏的固定偏移，避免右侧裁切。 */
+[data-mini-game="box-choice"] .box-choice-stage>.box-choice-answer-overlay{left:0;top:36%;width:100%;height:76px;padding:0;transform:translateY(-50%);justify-content:center;overflow:visible}
+[data-mini-game="box-choice"] .box-choice-desk{left:-8%;bottom:0;width:116%;height:37%}
+[data-mini-game="box-choice"] .box-choice-desk-img{height:100%;object-fit:cover;object-position:center bottom}
+[data-mini-game="box-choice"] .box-choice-stage>.box-choice-round-timer{left:8%;top:78%;width:84%;height:24px}
+[data-mini-game="box-choice"] .box-choice-round-timer-track{width:94%;height:12px}
+/* 舟往何方：保持原题行列与相邻干扰关系，船只按网格居中。 */
+[data-mini-game="lake-rowing"] #gameScreen{display:flex;flex-direction:column}
+[data-mini-game="lake-rowing"] #gameScreen.hidden{display:none}
+[data-mini-game="lake-rowing"] .lr-prompt{font-size:20px;line-height:1.5;height:auto;margin:22px 10px 0}
+[data-mini-game="lake-rowing"] #lakeBoard{width:100%;height:auto;flex:1;min-height:180px;padding:22px 12px;display:grid;grid-template-columns:repeat(var(--boat-columns,3),minmax(0,1fr));grid-template-rows:repeat(var(--boat-rows,1),minmax(0,1fr));align-items:center;justify-items:center}
+[data-mini-game="lake-rowing"] #lakeBoard .lr-boat{position:relative;left:auto!important;top:auto!important;width:100%;height:auto;aspect-ratio:1;max-width:96px}
+[data-mini-game="lake-rowing"] #lakeBoard .lr-boat.is-target::before{inset:0;width:100%;height:100%}
+[data-mini-game="lake-rowing"] #lakeBoard .lr-boat.is-target::after{left:32%;top:100%;width:36%}
+[data-mini-game="lake-rowing"] #answerRow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:16px 20px 24px;min-height:0}
+[data-mini-game="lake-rowing"] #answerRow:has(button:nth-child(3)){grid-template-columns:repeat(2,minmax(0,1fr))}
+[data-mini-game="lake-rowing"] #answerRow .lr-answer-button{width:100%;height:72px;border-radius:16px}
+[data-mini-game="lake-rowing"] #answerRow .lr-answer-button img{width:42px;height:42px}
+/* 车来车往：车道按题目门数均分；车辆坐标由场景渲染器按同一时间线映射。 */
+[data-mini-game="car-count"] #sceneMount .cc-scene{width:100%;height:100%;transform:none!important}
+[data-mini-game="car-count"] #sceneMount .cc-road{left:calc((var(--cc-lane) + .5)*100%/var(--cc-doors) - 26px)!important;top:90px;width:52px;height:calc(100% - 90px);border-width:2px}
+[data-mini-game="car-count"] #sceneMount .cc-road i{left:24px;width:2px}
+[data-mini-game="car-count"] #sceneMount .cc-roof,[data-mini-game="car-count"] #sceneMount .cc-roof-underlay{left:4%;top:48px;width:92%;height:100px}
+[data-mini-game="car-count"] #sceneMount .cc-threshold{left:calc((var(--cc-lane) + .5)*100%/var(--cc-doors) - 24px)!important;top:146px;width:48px;height:7px}
+[data-mini-game="car-count"] #sceneMount .cc-cars{clip-path:inset(90px 0 0)}
+[data-mini-game="car-count"] #sceneMount .cc-car{width:36px;height:68px}
+[data-mini-game="car-count"] #sceneMount .cc-observe-text{left:12px;right:12px;top:6px;font-size:17px;line-height:26px}
+[data-mini-game="car-count"] #sceneMount .cc-answer-panel{left:12px;right:12px;bottom:22px;padding:18px 12px;border-radius:20px}
+[data-mini-game="car-count"] #sceneMount .cc-answer-panel h2{font-size:20px;line-height:1.5;margin:0 0 16px}
+[data-mini-game="car-count"] #sceneMount .cc-answer-grid{gap:8px}
+[data-mini-game="car-count"] #sceneMount .cc-answer-grid button{height:54px;font-size:26px}
+/* 果盘比数：左右关系保留，盘内以三列排布同一题的全部物品。 */
+[data-mini-game="fruit-count-compare"] #gameArea>.fcc-board{width:100%;height:100%;transform:none;display:flex;flex-direction:column;padding:12px;gap:14px;box-sizing:border-box}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-question{height:auto;min-height:66px;flex-wrap:wrap;flex-shrink:0;font-size:21px;gap:5px;padding:0}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-question img{width:42px;height:42px}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-help{position:static;width:auto;height:42px;padding:0 14px;font-size:17px}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-side-row{margin:0;gap:10px;flex:1;min-height:0;align-items:stretch}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-side{width:calc((100% - 10px)/2);height:100%;padding:5px;border-radius:20px;box-sizing:border-box}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-plate{width:100%;height:100%;border-width:2px;border-radius:16px;box-sizing:border-box}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-items{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-content:center;gap:5px;padding:7px;height:100%;box-sizing:border-box}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-item{position:static!important;width:100%;height:auto;aspect-ratio:1}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-help-count{top:-12px;left:50%;transform:translateX(-50%);min-width:36px;padding:2px 8px;font-size:18px;border-width:2px}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-answer-row{position:static;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;flex-shrink:0;padding-bottom:10px}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-answer{width:100%;height:56px;font-size:20px;border-width:2px;border-radius:14px}
+[data-mini-game="fruit-count-compare"] #gameArea .fcc-teaching-text{position:static;order:-1;min-height:0;padding:6px;font-size:17px;line-height:1.5}
+
+/* 第二批：竖屏重排仅作用于游戏区，演示继续使用原横屏舞台。 */
+[data-mini-game="where-is-it"] #gameScreen .find-fruit-area{padding:20px 12px;gap:18px;justify-content:center;min-height:0}
+[data-mini-game="where-is-it"] #gameScreen .round-title{font-size:23px;white-space:normal;height:auto;min-height:40px;gap:10px;-webkit-text-stroke:2px #632505}
+[data-mini-game="where-is-it"] #gameScreen .find-fruit-board-wrap{width:100%;height:auto;aspect-ratio:1;box-sizing:border-box;padding:10px}
+[data-mini-game="where-is-it"] #gameScreen .find-fruit-board{gap:8px}
+[data-mini-game="where-is-it"] #gameScreen .round-progress{width:100%;box-sizing:border-box}
+[data-mini-game="where-is-it"] #gameScreen .memorize-btn{min-height:48px;width:70%;font-size:20px}
+[data-mini-game="food-position-memory"] .food-screen{inset:0;width:100%;height:100%;transform:none;display:flex;flex-direction:column}
+[data-mini-game="food-position-memory"] #topBarMount{height:auto;flex:none}
+[data-mini-game="food-position-memory"] #gameScreen .food-play{height:auto;flex:1;min-height:0;padding:10px 12px;gap:10px}
+[data-mini-game="food-position-memory"] #gameScreen .food-instructions{height:auto}
+[data-mini-game="food-position-memory"] #gameScreen .food-instructions h1{font-size:22px}
+[data-mini-game="food-position-memory"] #gameScreen .food-instructions p{font-size:15px}
+[data-mini-game="food-position-memory"] #gameScreen .food-trays{grid-template-columns:1fr;grid-template-rows:1fr 1fr;gap:10px}
+[data-mini-game="food-position-memory"] #gameScreen .food-tray{padding:8px;border-radius:16px}
+[data-mini-game="food-position-memory"] #gameScreen .food-tray h2{font-size:16px;line-height:20px;margin-bottom:6px}
+[data-mini-game="food-position-memory"] #gameScreen .food-grid{gap:6px}
+[data-mini-game="food-position-memory"] #gameScreen .food-cover{top:32px;inset-inline:8px;bottom:8px;border-radius:20px}
+[data-mini-game="food-position-memory"] #gameScreen .food-cover p{margin:8px 0}
+[data-mini-game="food-position-memory"] #gameScreen .food-actions{height:auto;flex-wrap:wrap;gap:6px;justify-content:center}
+[data-mini-game="food-position-memory"] #gameScreen .food-button{font-size:16px;min-height:44px;padding:8px 12px}
+[data-mini-game="food-position-memory"] #placedCount{font-size:14px}
+[data-mini-game="water-split"] #tubesContainer{bottom:80px}
+[data-mini-game="water-split"] .control-buttons{bottom:16px;gap:16px}
+[data-mini-game="water-split"] .control-btn{min-width:100px;min-height:48px;font-size:18px}
+[data-mini-game="sky-symbols-game"] .sky-symbols-hint{font-size:21px;top:16px;max-width:94%;white-space:normal;text-align:center}
+[data-mini-game="sky-symbols-game"] .sky-symbols-item{width:72px;height:72px;padding:5px}
+[data-mini-game="find-same"] #gameArea{padding:12px;min-height:0}
+[data-mini-game="find-same"] #gameScreen .find-same-board{height:100%;gap:12px;justify-content:center}
+[data-mini-game="find-same"] #gameScreen .find-same-title{font-size:20px;white-space:normal;margin:0;line-height:1.4}
+[data-mini-game="find-same"] #gameScreen .find-same-circles-row{flex-direction:column;gap:24px;flex:1;min-height:0;justify-content:center}
+[data-mini-game="find-same"] #gameScreen .find-same-circle{width:var(--mini-circle-size,230px);height:var(--mini-circle-size,230px)}
+[data-mini-game="find-same"] #gameScreen .find-same-progress-bar,[data-mini-game="find-same"] #gameScreen .find-same-progress-bar-outer{width:100%;height:22px}
+[data-mini-game="find-same"] #gameScreen .find-same-progress-bar-inner{height:16px}
+[data-mini-game="food-position-memory"] #candidateBoard:has(button:nth-child(10)){grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr))}
+[data-mini-game="food-position-memory"] #gameScreen .food-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+[data-mini-game="food-position-memory"] #placedCount{grid-column:1/-1;grid-row:1;text-align:center}
+[data-mini-game="food-position-memory"] #gameScreen .food-tray{padding:6px}
+[data-mini-game="food-position-memory"] #gameScreen .food-tray h2{font-size:15px;line-height:18px;margin-bottom:4px}
+
+[data-mini-game="sky-symbols-game"] .sky-symbols-hint{width:max-content}
+[data-mini-game="find-same"] #gameScreen:has(.fs-help-overlay) .find-same-title{visibility:hidden}
+
+[data-mini-game="find-same"] #gameArea .find-same-item{padding:0}
+
+/* 教学提示独占顶栏下方的说明区，棋盘和手指仍按真实目标定位。 */
+[data-mini-game="food-position-memory"] #teachingOverlay{inset:0}
+[data-mini-game="food-position-memory"] .food-shell:has(#teachingOverlay:not(.hidden)) .food-instructions{min-height:70px;flex-shrink:0}
+[data-mini-game="food-position-memory"] #helpCaption{width:calc(100% - 24px);max-width:none;box-sizing:border-box;--game-help-caption-font-size:17px;line-height:1.5}
+
+/* 演示始终保留完整横屏场景；内嵌与弹窗使用相同几何，只缩放舞台。 */
+[data-mini-game] .mini-demo-scene{position:absolute;left:50%;top:50%;width:128rem;height:72rem;box-sizing:border-box;transform:translate(-50%,-50%) scale(var(--mini-demo-scale,1));transform-origin:center;flex-shrink:0}
+[data-mini-game="find-same"] .mini-demo-scene{padding:0;--sm-demo-hand-scene-scale:1}
+[data-mini-game="find-same"] .mini-demo-scene .find-same-board{width:100%;height:100%;justify-content:center;transform:none;gap:2.4rem}
+[data-mini-game="where-is-it"] .mini-demo-scene{display:flex;flex-direction:column;align-items:center;padding:4rem 20rem 3rem;gap:1.2rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .ff-demo-board-wrap{width:100%;max-width:none;max-height:none;flex:1;min-height:0;margin:0;padding:1.6rem;border-radius:2.4rem;border-width:.4rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .ff-demo-board{gap:1.2rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .ff-demo-target-bar{font-size:2.4rem;min-height:5.2rem;height:auto;padding:.8rem 1.8rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .ff-demo-target-label{font-size:2.4rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .title-target-img{width:3.6rem;height:3.6rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .ff-demo-progress{width:100%;max-width:none;height:3.2rem;padding:.5rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .ff-demo-progress-track{height:2.8rem;padding:.4rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .ff-demo-memorize-btn{max-width:24rem;height:5.6rem;font-size:2.6rem;border-radius:1.6rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .fruit-card{border-radius:1.4rem}
+[data-mini-game="where-is-it"] .mini-demo-scene .card-item-img{width:85%;height:85%}
+[data-mini-game="find-same"] #fsDemoOverlayBoard{--sm-demo-hand-scene-scale:1}
+[data-mini-game="find-same"] #fsDemoOverlayBoard .find-same-board{transform:none}
+/* 规则已在弹窗舞台下方显示，移除画面内重复标题，避免被演示徽章遮住。 */
+[data-mini-game="find-same"] .mini-demo-scene .find-same-title{visibility:hidden}
+/* 圆盘按实际剩余区域尽量放大，盘沿与两盘之间保持可见间距。 */
+[data-mini-game="find-same"] #gameScreen .find-same-circles-row{flex:1 1 0;gap:calc(var(--mini-circle-size,230px)*.14286 + 16px);padding:calc(var(--mini-circle-size,230px)*.07143) 0;box-sizing:border-box}
+[data-mini-game="find-same"] #gameScreen .find-same-circle{flex-shrink:0}
+[data-mini-game="find-same"] #gameScreen .find-same-title,[data-mini-game="find-same"] #gameScreen .find-same-progress-bar{flex-shrink:0}
